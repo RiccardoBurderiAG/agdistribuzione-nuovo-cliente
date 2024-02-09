@@ -27,13 +27,19 @@
         <div class='formContainer'>
             <!-- TODO change action to action="https://www.agdistribuzione.it/agenti/nuovo-cliente" -->
             <form method="post" id="nuovoClienteForm" enctype="multipart/form-data" action="/">
-                <div class="inputContainer">
-                    <label for="fname">First name:</label>
-                    <input type="text" id="fname" name="fname" placeholder="Codece Agente*"><br><br>
+                <div class="inputGroupContainer">
+                    <div class="inputContainer">
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname" placeholder="Codece Agente*">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="fname">First name:</label>
+                        <input type="text" id="fname" name="fname" placeholder="Codece Agente*">
+                    </div>
                 </div>
                 <div class="submitContainer">
-                    <input type="submit" name="formSend" id="Send" class="sendFormData" value="Invia">
-                    <input type="submit" name="formSend" id="Send" class="sendFormDataReset" onclick="resetForm()" value="Reset">
+                    <input type="submit" name="formSend" id="Send" class="sendButton sendFormData" value="Invia">
+                    <input type="submit" name="formSend" id="Send" class="sendButton sendButton-black sendFormDataReset" onclick="resetForm()" value="Reset">
                 </div>
             </form>
         </div>
