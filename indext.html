@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="./favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+    <div class="style-0">
+        <div class="style-1">
+            <p class="style-2">Compila il form sottostante per inserimento nuovo cliente.</p>
+        </div>
+        <div class="style-3">
+            <label class="style-4" data-uk-tooltip="{pos:'top-left'}" title="" for="CodAgente" aria-invalid="false">Codice Agente<strong class="style-5">Obbligatorio</strong></label>
+            <div class="style-6">
+                <input type="text" value="" size="20" name="form[CodAgente]" placeholder="Codice Agente*" class="style-7" aria-required="true" /> <span class="style-8"><span class="style-9">Inserisci il Codice Agente</span></span>
+            </div>
+        </div>
+        <div class="style-10">
+            <label class="style-11" data-uk-tooltip="{pos:'top-left'}" title="" for="Listino" aria-invalid="false">Listino<strong class="style-12">Obbligatorio</strong></label>
+            <div class="style-13">
+                <select name="form[Listino][]" class="style-14" aria-required="true">
+                    <option value="" class="style-15">Seleziona</option>
+                    <option value="4A" class="style-16">4A</option>
+                    <option value="5A" class="style-17">5A</option>
+                    <option value="6A" class="style-18">6A</option>
+                </select> <span class="style-19"><span class="style-20">Selezionare il listino</span></span>
+            </div>
+        </div>
+        <div class="style-21">
+            <label class="style-22" data-uk-tooltip="{pos:'top-left'}" title="" for="CondPagamento" aria-invalid="false">Condizioni Pagamento<strong class="style-23">Obbligatorio</strong></label>
+            <div class="style-24">
+                <input type="text" value="" size="20" name="form[CondPagamento]" placeholder="Condizioni Pagamento*" class="style-25" aria-required="true" /> <span class="style-26"><span class="style-27">Inserisci le condizioni pagamento</span></span>
+            </div>
+        </div>
+        <div class="style-28">
+            <p class="style-29"><strong class="style-30">Dettagli Cliente</strong></p>
+        </div>
+        <div class="style-31">
+            <label class="style-32" data-uk-tooltip="{pos:'top-left'}" title="">Se società barrare</label>
+            <div class="style-33" role="group" aria-labelledby="TipologiaAzienda-grouplbl">
+                <label for="TipologiaAzienda0" class="style-34"><input type="radio" name="form[TipologiaAzienda]" value="SAS" class="style-35" /> SAS</label> <label for="TipologiaAzienda1" class="style-36"><input type="radio" name="form[TipologiaAzienda]" value="SNC" class="style-37" /> SNC</label> <label for="TipologiaAzienda2" class="style-38"><input type="radio" name="form[TipologiaAzienda]" value="SRL" class="style-39" /> SRL</label> <label for="TipologiaAzienda3" class="style-40"><input type="radio" name="form[TipologiaAzienda]" value="SPA" class="style-41" /> SPA</label> <label for="TipologiaAzienda4" class="style-42"><input type="radio" name="form[TipologiaAzienda]" value="COOP ARL" class="style-43" /> COOP ARL</label> <label for="TipologiaAzienda5" class="style-44"><input type="radio" name="form[TipologiaAzienda]" value="Altro" class="style-45" /> Altro</label> <span class="style-46"><span class="style-47">Selezionare la tipologia di società</span></span>
+            </div>
+        </div>
+        <div class="style-48">
+            <label class="style-49" data-uk-tooltip="{pos:'top-left'}" title="" for="Titolare" aria-invalid="false">Titolare o Ditta<strong class="style-50">Obbligatorio</strong></label>
+            <div class="style-51">
+                <input type="text" value="" size="20" name="form[Titolare]" placeholder="Titolare o Ditta*" class="style-52" aria-required="true" /> <span class="style-53"><span class="style-54">Inserisci il nome del titolare o della ditta</span></span>
+            </div>
+        </div>
+        <div class="style-55">
+            <label class="style-56" data-uk-tooltip="{pos:'top-left'}" title="Specificare nel caso in cui il marchio commerciale differisce dal nome dell'azienda." for="Denominata" aria-invalid="false">Denominazione Commerciale / Insegna</label>
+            <div class="style-57">
+                <input type="text" value="" size="20" name="form[Denominata]" placeholder="Denominazione Commerciale / Insegna" class="style-58" /> <span class="style-59"><span class="style-60">Inserire la denominazione della ditta</span></span>
+            </div>
+        </div>
+        <div class="style-61">
+            <label class="style-62" data-uk-tooltip="{pos:'top-left'}" title="" for="AttivitaDrop" aria-invalid="false">Tipologia di Attività<strong class="style-63">Obbligatorio</strong></label>
+            <div class="style-64">
+                <select name="form[AttivitaDrop][]" class="style-65" aria-required="true">
+                    <option value="" class="style-66">Seleziona</option>
+                    <option value="AGRITURISMI (28)" class="style-67">AGRITURISMI (28)</option>
+                    <option value="ALIMENTARI (03)" class="style-68">ALIMENTARI (03)</option>
+                    <option value="AMBULANTI (04)" class="style-69">AMBULANTI (04)</option>
+                    <option value="ARTIGIANI / COMMERCIANTI NON ALIMENTARI (26)" class="style-70">ARTIGIANI / COMMERCIANTI NON ALIMENTARI (26)</option>
+                    <option value="ASSOCIAZIONI/CLUB/PALESTRE (15)" class="style-71">ASSOCIAZIONI/CLUB/PALESTRE (15)</option>
+                    <option value="AZ.AGRICOLE (18)" class="style-72">AZ.AGRICOLE (18)</option>
+                    <option value="BAR/PASTICCERIE/GELATERIE (24)" class="style-73">BAR/PASTICCERIE/GELATERIE (24)</option>
+                    <option value="BAR/TABACCHI (10)" class="style-74">BAR/TABACCHI (10)</option>
+                    <option value="CASE DI RIPOSO/COOP SOCIALI/ACCOGLIENZA (27)" class="style-75">CASE DI RIPOSO/COOP SOCIALI/ACCOGLIENZA (27)</option>
+                    <option value="CHIOSCHI (61)" class="style-76">CHIOSCHI (61)</option>
+                    <option value="DISCOTECHE (17)" class="style-77">DISCOTECHE (17)</option>
+                    <option value="ENOTECHE (33)" class="style-78">ENOTECHE (33)</option>
+                    <option value="ENTI PUBBLICI/PRIVATI/PARROCCHIE (30)" class="style-79">ENTI PUBBLICI/PRIVATI/PARROCCHIE (30)</option>
+                    <option value="FABBRICHE/INDUSTRIE (29)" class="style-80">FABBRICHE/INDUSTRIE (29)</option>
+                    <option value="FORNITORI (06)" class="style-81">FORNITORI (06)</option>
+                    <option value="GENERICI (09)" class="style-82">GENERICI (09)</option>
+                    <option value="GROSSISTI (01)" class="style-83">GROSSISTI (01)</option>
+                    <option value="HOTEL/B&amp;B/RESORT/CAMPEGGIO (32)" class="style-84">HOTEL/B&amp;B/RESORT/CAMPEGGIO (32)</option>
+                    <option value="MACELLERIE (13)" class="style-85">MACELLERIE (13)</option>
+                    <option value="NON ALIMENTARI/CASALINGHI (20)" class="style-86">NON ALIMENTARI/CASALINGHI (20)</option>
+                    <option value="PANIFICI/ROSTICCERIE (14)" class="style-87">PANIFICI/ROSTICCERIE (14)</option>
+                    <option value="PESCHERIE (21)" class="style-88">PESCHERIE (21)</option>
+                    <option value="PUB/PANINERIA (11)" class="style-89">PUB/PANINERIA (11)</option>
+                    <option value="RISTORANTI/PIZZERIE (12)" class="style-90">RISTORANTI/PIZZERIE (12)</option>
+                    <option value="SELF-SERVICE (25)" class="style-91">SELF-SERVICE (25)</option>
+                    <option value="STABILIMENTI BALNEARI (63)" class="style-92">STABILIMENTI BALNEARI (63)</option>
+                    <option value="STUDI MEDICI /FARMACIA /PARAFARMACIA (19)" class="style-93">STUDI MEDICI /FARMACIA /PARAFARMACIA (19)</option>
+                    <option value="VENDING/DISTRIB. AUTOMATICA (16)" class="style-94">VENDING/DISTRIB. AUTOMATICA (16)</option>
+                </select> <span class="style-95"><span class="style-96">Selezionare la tipologia di Attività</span></span>
+            </div>
+        </div>
+        <div class="style-97">
+            <label class="style-98" data-uk-tooltip="{pos:'top-left'}" title="" for="Phone" aria-invalid="false">Tel<strong class="style-99">Obbligatorio</strong></label>
+            <div class="style-100">
+                <input type="tel" value="" size="20" name="form[Phone]" placeholder="Numero di telefono" class="style-101" aria-required="true" /> <span class="style-102"><span class="style-103">Inserisci il numero di telefono</span></span>
+            </div>
+        </div>
+        <div class="style-104">
+            <label class="style-105" data-uk-tooltip="{pos:'top-left'}" title="" for="Email" aria-invalid="false">Email<strong class="style-106">Obbligatorio</strong></label>
+            <div class="style-107">
+                <input type="email" value="" size="20" name="form[Email]" placeholder="Indirizzo Email*" class="style-108" aria-required="true" /> <span class="style-109"><span class="style-110">Inserisci l'indirizzo Email</span></span>
+            </div>
+        </div>
+        <div class="style-111">
+            <label class="style-112" data-uk-tooltip="{pos:'top-left'}" title="" for="Pec" aria-invalid="false">PEC</label>
+            <div class="style-113">
+                <input type="email" value="" size="20" name="form[Pec]" placeholder="Indirizzo Pec*" class="style-114" /> <span class="style-115"><span class="style-116">Inserisci l'indirizzo PEC</span></span>
+            </div>
+        </div>
+        <div class="style-117">
+            <label class="style-118" data-uk-tooltip="{pos:'top-left'}" title="">Giorni di Chiusura</label>
+            <div class="style-119" role="group" aria-labelledby="GiorniChiusura-grouplbl">
+                <label for="GiorniChiusura0" class="style-120"><input type="checkbox" name="form[GiorniChiusura][]" value="Lun" class="style-121" /> Lun</label> <label for="GiorniChiusura1" class="style-122"><input type="checkbox" name="form[GiorniChiusura][]" value="Mar" class="style-123" /> Mar</label> <label for="GiorniChiusura2" aria-invalid="false" class="style-124"><input type="checkbox" name="form[GiorniChiusura][]" value="Mer" class="style-125" /> Mer</label> <label for="GiorniChiusura3" class="style-126"><input type="checkbox" name="form[GiorniChiusura][]" value="Gio" class="style-127" /> Gio</label> <label for="GiorniChiusura4" class="style-128"><input type="checkbox" name="form[GiorniChiusura][]" value="Ven" class="style-129" /> Ven</label> <label for="GiorniChiusura5" class="style-130"><input type="checkbox" name="form[GiorniChiusura][]" value="Sab" class="style-131" /> Sab</label> <label for="GiorniChiusura6" class="style-132"><input type="checkbox" name="form[GiorniChiusura][]" value="Dom" class="style-133" /> Dom</label> <span class="style-134"><span class="style-135">Valore non valido</span></span>
+            </div>
+        </div>
+        <div class="style-136">
+            <label class="style-137" data-uk-tooltip="{pos:'top-left'}" title="" for="GiorniChiusuraDettagli" aria-invalid="false">Maggiori info sui giorni di chiusura</label>
+            <div class="style-138">
+                <textarea cols="50" rows="5" name="form[GiorniChiusuraDettagli]" placeholder="Da compilare esclusivamente per specificare maggiori dettagli sui giorni di chiusura come ad esempio chiusure metà giornata o chiusure nei weekend" class="style-139"></textarea> <span class="style-140"><span class="style-141"></span></span>
+            </div>
+        </div>
+        <div class="style-142">
+            <p class="style-143"><strong class="style-144">Indirizzo di Fatturazione</strong></p>
+        </div>
+        <div class="style-145">
+            <label class="style-146" data-uk-tooltip="{pos:'top-left'}" title="" for="Address">Indirizzo Fatturazione<strong class="style-147">Obbligatorio</strong></label>
+            <div class="style-148">
+                <input type="text" value="" size="20" name="form[Address]" placeholder="Indirizzo Fatturazione*" class="style-149" aria-required="true" /> <span class="style-150"><span class="style-151">Inserire l'indirizzo di fatturazione</span></span>
+            </div>
+        </div>
+        <div class="style-152">
+            <label class="style-153" data-uk-tooltip="{pos:'top-left'}" title="" for="Cap">Cap<strong class="style-154">Obbligatorio</strong></label>
+            <div class="style-155">
+                <input type="text" value="" size="20" name="form[Cap]" placeholder="Cap*" class="style-156" aria-required="true" /> <span class="style-157"><span class="style-158">Inserire il CAP</span></span>
+            </div>
+        </div>
+        <div class="style-159">
+            <label class="style-160" data-uk-tooltip="{pos:'top-left'}" title="" for="Province" aria-invalid="false">Provincia<strong class="style-161">Obbligatorio</strong></label>
+            <div class="style-162">
+                <select name="form[Province][]" class="style-163" aria-required="true">
+                    <option value="" class="style-164">Seleziona la Provincia</option>
+                    <option value="AGRIGENTO" class="style-165">AGRIGENTO</option>
+                    <option value="ALESSANDRIA" class="style-166">ALESSANDRIA</option>
+                    <option value="ANCONA" class="style-167">ANCONA</option>
+                    <option value="AOSTA" class="style-168">AOSTA</option>
+                    <option value="AREZZO" class="style-169">AREZZO</option>
+                    <option value="ASCOLI PICENO" class="style-170">ASCOLI PICENO</option>
+                    <option value="ASTI" class="style-171">ASTI</option>
+                    <option value="AVELLINO" class="style-172">AVELLINO</option>
+                    <option value="BARI" class="style-173">BARI</option>
+                    <option value="BARLETTA-ANDRIA-TRANI" class="style-174">BARLETTA-ANDRIA-TRANI</option>
+                    <option value="BELLUNO" class="style-175">BELLUNO</option>
+                    <option value="BENEVENTO" class="style-176">BENEVENTO</option>
+                    <option value="BERGAMO" class="style-177">BERGAMO</option>
+                    <option value="BIELLA" class="style-178">BIELLA</option>
+                    <option value="BOLOGNA" class="style-179">BOLOGNA</option>
+                    <option value="BOLZANO" class="style-180">BOLZANO</option>
+                    <option value="BRESCIA" class="style-181">BRESCIA</option>
+                    <option value="BRINDISI" class="style-182">BRINDISI</option>
+                    <option value="CAGLIARI" class="style-183">CAGLIARI</option>
+                    <option value="CALTANISSETTA" class="style-184">CALTANISSETTA</option>
+                    <option value="CAMPOBASSO" class="style-185">CAMPOBASSO</option>
+                    <option value="CARBONIA-IGLESIAS" class="style-186">CARBONIA-IGLESIAS</option>
+                    <option value="CASERTA" class="style-187">CASERTA</option>
+                    <option value="CATANIA" class="style-188">CATANIA</option>
+                    <option value="CATANZARO" class="style-189">CATANZARO</option>
+                    <option value="CHIETI" class="style-190">CHIETI</option>
+                    <option value="COMO" class="style-191">COMO</option>
+                    <option value="COSENZA" class="style-192">COSENZA</option>
+                    <option value="CREMONA" class="style-193">CREMONA</option>
+                    <option value="CROTONE" class="style-194">CROTONE</option>
+                    <option value="CUNEO" class="style-195">CUNEO</option>
+                    <option value="ENNA" class="style-196">ENNA</option>
+                    <option value="FERMO" class="style-197">FERMO</option>
+                    <option value="FERRARA" class="style-198">FERRARA</option>
+                    <option value="FIRENZE" class="style-199">FIRENZE</option>
+                    <option value="FOGGIA" class="style-200">FOGGIA</option>
+                    <option value="FORLI’-CESENA" class="style-201">FORLI’-CESENA</option>
+                    <option value="FROSINONE" class="style-202">FROSINONE</option>
+                    <option value="GENOVA" class="style-203">GENOVA</option>
+                    <option value="GORIZIA" class="style-204">GORIZIA</option>
+                    <option value="GROSSETO" class="style-205">GROSSETO</option>
+                    <option value="IMPERIA" class="style-206">IMPERIA</option>
+                    <option value="ISERNIA" class="style-207">ISERNIA</option>
+                    <option value="LA SPEZIA" class="style-208">LA SPEZIA</option>
+                    <option value="L’AQUILA" class="style-209">L’AQUILA</option>
+                    <option value="LATINA" class="style-210">LATINA</option>
+                    <option value="LECCE" class="style-211">LECCE</option>
+                    <option value="LECCO" class="style-212">LECCO</option>
+                    <option value="LIVORNO" class="style-213">LIVORNO</option>
+                    <option value="LODI" class="style-214">LODI</option>
+                    <option value="LUCCA" class="style-215">LUCCA</option>
+                    <option value="MACERATA" class="style-216">MACERATA</option>
+                    <option value="MANTOVA" class="style-217">MANTOVA</option>
+                    <option value="MASSA-CARRARA" class="style-218">MASSA-CARRARA</option>
+                    <option value="MATERA" class="style-219">MATERA</option>
+                    <option value="MEDIO CAMPIDANO" class="style-220">MEDIO CAMPIDANO</option>
+                    <option value="MESSINA" class="style-221">MESSINA</option>
+                    <option value="MILANO" class="style-222">MILANO</option>
+                    <option value="MODENA" class="style-223">MODENA</option>
+                    <option value="MONZA E BRIANZA" class="style-224">MONZA E BRIANZA</option>
+                    <option value="NAPOLI" class="style-225">NAPOLI</option>
+                    <option value="NOVARA" class="style-226">NOVARA</option>
+                    <option value="NUORO" class="style-227">NUORO</option>
+                    <option value="OGLIASTRA" class="style-228">OGLIASTRA</option>
+                    <option value="OLBIA-TEMPIO" class="style-229">OLBIA-TEMPIO</option>
+                    <option value="ORISTANO" class="style-230">ORISTANO</option>
+                    <option value="PADOVA" class="style-231">PADOVA</option>
+                    <option value="PALERMO" class="style-232">PALERMO</option>
+                    <option value="PARMA" class="style-233">PARMA</option>
+                    <option value="PAVIA" class="style-234">PAVIA</option>
+                    <option value="PERUGIA" class="style-235">PERUGIA</option>
+                    <option value="PESARO E URBINO" class="style-236">PESARO E URBINO</option>
+                    <option value="PESCARA" class="style-237">PESCARA</option>
+                    <option value="PIACENZA" class="style-238">PIACENZA</option>
+                    <option value="PISA" class="style-239">PISA</option>
+                    <option value="PISTOIA" class="style-240">PISTOIA</option>
+                    <option value="PORDENONE" class="style-241">PORDENONE</option>
+                    <option value="POTENZA" class="style-242">POTENZA</option>
+                    <option value="PRATO" class="style-243">PRATO</option>
+                    <option value="RAGUSA" class="style-244">RAGUSA</option>
+                    <option value="RAVENNA" class="style-245">RAVENNA</option>
+                    <option value="REGGIO CALABRIA" class="style-246">REGGIO CALABRIA</option>
+                    <option value="REGGIO EMILIA" class="style-247">REGGIO EMILIA</option>
+                    <option value="RIETI" class="style-248">RIETI</option>
+                    <option value="RIMINI" class="style-249">RIMINI</option>
+                    <option value="ROMA" class="style-250">ROMA</option>
+                    <option value="ROVIGO" class="style-251">ROVIGO</option>
+                    <option value="SALERNO" class="style-252">SALERNO</option>
+                    <option value="SASSARI" class="style-253">SASSARI</option>
+                    <option value="SAVONA" class="style-254">SAVONA</option>
+                    <option value="SIENA" class="style-255">SIENA</option>
+                    <option value="SIRACUSA" class="style-256">SIRACUSA</option>
+                    <option value="SONDRIO" class="style-257">SONDRIO</option>
+                    <option value="TARANTO" class="style-258">TARANTO</option>
+                    <option value="TERAMO" class="style-259">TERAMO</option>
+                    <option value="TERNI" class="style-260">TERNI</option>
+                    <option value="TORINO" class="style-261">TORINO</option>
+                    <option value="TRAPANI" class="style-262">TRAPANI</option>
+                    <option value="TRENTO" class="style-263">TRENTO</option>
+                    <option value="TREVISO" class="style-264">TREVISO</option>
+                    <option value="TRIESTE" class="style-265">TRIESTE</option>
+                    <option value="UDINE" class="style-266">UDINE</option>
+                    <option value="VARESE" class="style-267">VARESE</option>
+                    <option value="VENEZIA" class="style-268">VENEZIA</option>
+                    <option value="VERBANO-CUSIO-OSSOLA" class="style-269">VERBANO-CUSIO-OSSOLA</option>
+                    <option value="VERCELLI" class="style-270">VERCELLI</option>
+                    <option value="VERONA" class="style-271">VERONA</option>
+                    <option value="VIBO VALENTIA" class="style-272">VIBO VALENTIA</option>
+                    <option value="VICENZA" class="style-273">VICENZA</option>
+                    <option value="VITERBO" class="style-274">VITERBO</option>
+                </select> <span class="style-275"><span class="style-276">Seleziona la Provincia</span></span>
+            </div>
+        </div>
+        <div class="style-277">
+            <label class="style-278" data-uk-tooltip="{pos:'top-left'}" title="" for="City">Città<strong class="style-279">Obbligatorio</strong></label>
+            <div class="style-280">
+                <input type="text" value="" size="20" name="form[City]" placeholder="Città*" class="style-281" aria-required="true" /> <span class="style-282"><span class="style-283">Inserire la città dove risiede l'azienda</span></span>
+            </div>
+        </div>
+        <div class="style-284">
+            <label class="style-285" data-uk-tooltip="{pos:'top-left'}" title="" for="PartitaIva">Partita Iva<strong class="style-286">Obbligatorio</strong></label>
+            <div class="style-287">
+                <input type="text" value="" size="20" name="form[PartitaIva]" placeholder="Partita Iva*" class="style-288" aria-required="true" /> <span class="style-289"><span class="style-290">Inserisci la Partita Iva</span></span>
+            </div>
+        </div>
+        <div class="style-291">
+            <label class="style-292" data-uk-tooltip="{pos:'top-left'}" title="" for="CodUnivoco">Codice Univoco<strong class="style-293">Obbligatorio</strong></label>
+            <div class="style-294">
+                <input type="text" value="" size="20" name="form[CodUnivoco]" placeholder="Codice Univoco*" class="style-295" aria-required="true" /> <span class="style-296"><span class="style-297">Inserisci il codice univoco</span></span>
+            </div>
+        </div>
+        <div class="style-298">
+            <p class="style-299"><strong class="style-300">Indirizzo di Consegna</strong><br class="style-301" />
+                Da compilare esclusivamente se l'indirizzo di consegna differisce dall'indirizzo di fatturazione.</p>
+        </div>
+        <div class="style-302">
+            <label class="style-303" data-uk-tooltip="{pos:'top-left'}" title="" for="IndirizzoMerci">Indirizzo Destinazione Merci</label>
+            <div class="style-304">
+                <input type="text" value="" size="20" name="form[IndirizzoMerci]" placeholder="Indirizzo Destinazione Merci" class="style-305" /> <span class="style-306"><span class="style-307">Inserire l'indirizzo di destinazione delle merci</span></span>
+            </div>
+        </div>
+        <div class="style-308">
+            <label class="style-309" data-uk-tooltip="{pos:'top-left'}" title="" for="CapMerci">Cap</label>
+            <div class="style-310">
+                <input type="text" value="" size="20" name="form[CapMerci]" placeholder="Cap" class="style-311" /> <span class="style-312"><span class="style-313">Inserire il CAP</span></span>
+            </div>
+        </div>
+        <div class="style-314">
+            <label class="style-315" data-uk-tooltip="{pos:'top-left'}" title="" for="ProvinceMerci" aria-invalid="false">Provincia</label>
+            <div class="style-316">
+                <select name="form[ProvinceMerci][]" class="style-317">
+                    <option value="" class="style-318">Seleziona la Provincia</option>
+                    <option value="AGRIGENTO" class="style-319">AGRIGENTO</option>
+                    <option value="ALESSANDRIA" class="style-320">ALESSANDRIA</option>
+                    <option value="ANCONA" class="style-321">ANCONA</option>
+                    <option value="AOSTA" class="style-322">AOSTA</option>
+                    <option value="AREZZO" class="style-323">AREZZO</option>
+                    <option value="ASCOLI PICENO" class="style-324">ASCOLI PICENO</option>
+                    <option value="ASTI" class="style-325">ASTI</option>
+                    <option value="AVELLINO" class="style-326">AVELLINO</option>
+                    <option value="BARI" class="style-327">BARI</option>
+                    <option value="BARLETTA-ANDRIA-TRANI" class="style-328">BARLETTA-ANDRIA-TRANI</option>
+                    <option value="BELLUNO" class="style-329">BELLUNO</option>
+                    <option value="BENEVENTO" class="style-330">BENEVENTO</option>
+                    <option value="BERGAMO" class="style-331">BERGAMO</option>
+                    <option value="BIELLA" class="style-332">BIELLA</option>
+                    <option value="BOLOGNA" class="style-333">BOLOGNA</option>
+                    <option value="BOLZANO" class="style-334">BOLZANO</option>
+                    <option value="BRESCIA" class="style-335">BRESCIA</option>
+                    <option value="BRINDISI" class="style-336">BRINDISI</option>
+                    <option value="CAGLIARI" class="style-337">CAGLIARI</option>
+                    <option value="CALTANISSETTA" class="style-338">CALTANISSETTA</option>
+                    <option value="CAMPOBASSO" class="style-339">CAMPOBASSO</option>
+                    <option value="CARBONIA-IGLESIAS" class="style-340">CARBONIA-IGLESIAS</option>
+                    <option value="CASERTA" class="style-341">CASERTA</option>
+                    <option value="CATANIA" class="style-342">CATANIA</option>
+                    <option value="CATANZARO" class="style-343">CATANZARO</option>
+                    <option value="CHIETI" class="style-344">CHIETI</option>
+                    <option value="COMO" class="style-345">COMO</option>
+                    <option value="COSENZA" class="style-346">COSENZA</option>
+                    <option value="CREMONA" class="style-347">CREMONA</option>
+                    <option value="CROTONE" class="style-348">CROTONE</option>
+                    <option value="CUNEO" class="style-349">CUNEO</option>
+                    <option value="ENNA" class="style-350">ENNA</option>
+                    <option value="FERMO" class="style-351">FERMO</option>
+                    <option value="FERRARA" class="style-352">FERRARA</option>
+                    <option value="FIRENZE" class="style-353">FIRENZE</option>
+                    <option value="FOGGIA" class="style-354">FOGGIA</option>
+                    <option value="FORLI’-CESENA" class="style-355">FORLI’-CESENA</option>
+                    <option value="FROSINONE" class="style-356">FROSINONE</option>
+                    <option value="GENOVA" class="style-357">GENOVA</option>
+                    <option value="GORIZIA" class="style-358">GORIZIA</option>
+                    <option value="GROSSETO" class="style-359">GROSSETO</option>
+                    <option value="IMPERIA" class="style-360">IMPERIA</option>
+                    <option value="ISERNIA" class="style-361">ISERNIA</option>
+                    <option value="LA SPEZIA" class="style-362">LA SPEZIA</option>
+                    <option value="L’AQUILA" class="style-363">L’AQUILA</option>
+                    <option value="LATINA" class="style-364">LATINA</option>
+                    <option value="LECCE" class="style-365">LECCE</option>
+                    <option value="LECCO" class="style-366">LECCO</option>
+                    <option value="LIVORNO" class="style-367">LIVORNO</option>
+                    <option value="LODI" class="style-368">LODI</option>
+                    <option value="LUCCA" class="style-369">LUCCA</option>
+                    <option value="MACERATA" class="style-370">MACERATA</option>
+                    <option value="MANTOVA" class="style-371">MANTOVA</option>
+                    <option value="MASSA-CARRARA" class="style-372">MASSA-CARRARA</option>
+                    <option value="MATERA" class="style-373">MATERA</option>
+                    <option value="MEDIO CAMPIDANO" class="style-374">MEDIO CAMPIDANO</option>
+                    <option value="MESSINA" class="style-375">MESSINA</option>
+                    <option value="MILANO" class="style-376">MILANO</option>
+                    <option value="MODENA" class="style-377">MODENA</option>
+                    <option value="MONZA E BRIANZA" class="style-378">MONZA E BRIANZA</option>
+                    <option value="NAPOLI" class="style-379">NAPOLI</option>
+                    <option value="NOVARA" class="style-380">NOVARA</option>
+                    <option value="NUORO" class="style-381">NUORO</option>
+                    <option value="OGLIASTRA" class="style-382">OGLIASTRA</option>
+                    <option value="OLBIA-TEMPIO" class="style-383">OLBIA-TEMPIO</option>
+                    <option value="ORISTANO" class="style-384">ORISTANO</option>
+                    <option value="PADOVA" class="style-385">PADOVA</option>
+                    <option value="PALERMO" class="style-386">PALERMO</option>
+                    <option value="PARMA" class="style-387">PARMA</option>
+                    <option value="PAVIA" class="style-388">PAVIA</option>
+                    <option value="PERUGIA" class="style-389">PERUGIA</option>
+                    <option value="PESARO E URBINO" class="style-390">PESARO E URBINO</option>
+                    <option value="PESCARA" class="style-391">PESCARA</option>
+                    <option value="PIACENZA" class="style-392">PIACENZA</option>
+                    <option value="PISA" class="style-393">PISA</option>
+                    <option value="PISTOIA" class="style-394">PISTOIA</option>
+                    <option value="PORDENONE" class="style-395">PORDENONE</option>
+                    <option value="POTENZA" class="style-396">POTENZA</option>
+                    <option value="PRATO" class="style-397">PRATO</option>
+                    <option value="RAGUSA" class="style-398">RAGUSA</option>
+                    <option value="RAVENNA" class="style-399">RAVENNA</option>
+                    <option value="REGGIO CALABRIA" class="style-400">REGGIO CALABRIA</option>
+                    <option value="REGGIO EMILIA" class="style-401">REGGIO EMILIA</option>
+                    <option value="RIETI" class="style-402">RIETI</option>
+                    <option value="RIMINI" class="style-403">RIMINI</option>
+                    <option value="ROMA" class="style-404">ROMA</option>
+                    <option value="ROVIGO" class="style-405">ROVIGO</option>
+                    <option value="SALERNO" class="style-406">SALERNO</option>
+                    <option value="SASSARI" class="style-407">SASSARI</option>
+                    <option value="SAVONA" class="style-408">SAVONA</option>
+                    <option value="SIENA" class="style-409">SIENA</option>
+                    <option value="SIRACUSA" class="style-410">SIRACUSA</option>
+                    <option value="SONDRIO" class="style-411">SONDRIO</option>
+                    <option value="TARANTO" class="style-412">TARANTO</option>
+                    <option value="TERAMO" class="style-413">TERAMO</option>
+                    <option value="TERNI" class="style-414">TERNI</option>
+                    <option value="TORINO" class="style-415">TORINO</option>
+                    <option value="TRAPANI" class="style-416">TRAPANI</option>
+                    <option value="TRENTO" class="style-417">TRENTO</option>
+                    <option value="TREVISO" class="style-418">TREVISO</option>
+                    <option value="TRIESTE" class="style-419">TRIESTE</option>
+                    <option value="UDINE" class="style-420">UDINE</option>
+                    <option value="VARESE" class="style-421">VARESE</option>
+                    <option value="VENEZIA" class="style-422">VENEZIA</option>
+                    <option value="VERBANO-CUSIO-OSSOLA" class="style-423">VERBANO-CUSIO-OSSOLA</option>
+                    <option value="VERCELLI" class="style-424">VERCELLI</option>
+                    <option value="VERONA" class="style-425">VERONA</option>
+                    <option value="VIBO VALENTIA" class="style-426">VIBO VALENTIA</option>
+                    <option value="VICENZA" class="style-427">VICENZA</option>
+                    <option value="VITERBO" class="style-428">VITERBO</option>
+                </select> <span class="style-429"><span class="style-430">Seleziona la Provincia</span></span>
+            </div>
+        </div>
+        <div class="style-431">
+            <label class="style-432" data-uk-tooltip="{pos:'top-left'}" title="" for="CityMerci">Città</label>
+            <div class="style-433">
+                <input type="text" value="" size="20" name="form[CityMerci]" placeholder="Città" class="style-434" /> <span class="style-435"><span class="style-436">Inserire la città</span></span>
+            </div>
+        </div>
+        <div class="style-437">
+            <p class="style-438"><strong class="style-439">Dati Bancari</strong></p>
+        </div>
+        <div class="style-440">
+            <label class="style-441" data-uk-tooltip="{pos:'top-left'}" title="" for="BancaAppoggio">Banca di Appoggio</label>
+            <div class="style-442">
+                <input type="text" value="" size="20" name="form[BancaAppoggio]" placeholder="Banca di Appoggio" class="style-443" /> <span class="style-444"><span class="style-445">Inserire la Banca di Appoggio</span></span>
+            </div>
+        </div>
+        <div class="style-446">
+            <label class="style-447" data-uk-tooltip="{pos:'top-left'}" title="" for="Agenzia">Agenzia</label>
+            <div class="style-448">
+                <input type="text" value="" size="20" name="form[Agenzia]" placeholder="Agenzia" class="style-449" /> <span class="style-450"><span class="style-451">Inserire l'agenzia di riferimento</span></span>
+            </div>
+        </div>
+        <div class="style-452">
+            <label class="style-453" data-uk-tooltip="{pos:'top-left'}" title="" for="Iban">IBAN</label>
+            <div class="style-454">
+                <input type="text" value="" size="20" name="form[Iban]" placeholder="IBAN" class="style-455" /> <span class="style-456"><span class="style-457">Inserire IBAN</span></span>
+            </div>
+        </div>
+        <div class="style-458">
+            <p class="style-459"><strong class="style-460">Dati Responsabile/Amministratore Società</strong></p>
+        </div>
+        <div class="style-461">
+            <label class="style-462" data-uk-tooltip="{pos:'top-left'}" title="" for="Responsabile">Responsabile Società<strong class="style-463">Obbligatorio</strong></label>
+            <div class="style-464">
+                <input type="text" value="" size="20" name="form[Responsabile]" placeholder="Responsabile Società*" class="style-465" aria-required="true" /> <span class="style-466"><span class="style-467">Inserire Responsabile Società</span></span>
+            </div>
+        </div>
+        <div class="style-468">
+            <label class="style-469" data-uk-tooltip="{pos:'top-left'}" Max="" File:="" 12Mb="" Estensioni="" File="" Ammesse:="" PDF,="" JPG,="" PNG,="" ZIP,="" RAR,="" DOC,="" for="UpLoadDocumento" aria-invalid="false">Invia Documento d'identità<br class="style-470" />(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</label>
+            <div class="style-471">
+                <input type="file" name="form[UpLoadDocumento]" class="style-472" data-rsfp-exts="[&quot;pdf&quot;,&quot;zip&quot;,&quot;rar&quot;,&quot;doc&quot;,&quot;jpg&quot;,&quot;png&quot;,&quot;docx&quot;,&quot;jpeg&quot;]" data-rsfp-size="16384000" /> <span class="style-473"><span class="style-474">Carica un documento d'identità</span></span>
+            </div>
+        </div>
+        <div class="style-475">
+            <label class="style-476" data-uk-tooltip="{pos:'top-left'}" Max="" File:="" 12Mb="" Estensioni="" File="" Ammesse:="" PDF,="" JPG,="" PNG,="" ZIP,="" RAR,="" DOC,="" for="UpLoadCodFisc" aria-invalid="false">Invia Codice Fiscale<br class="style-477" />(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</label>
+            <div class="style-478">
+                <input type="file" name="form[UpLoadCodFisc]" class="style-479" data-rsfp-exts="[&quot;pdf&quot;,&quot;zip&quot;,&quot;rar&quot;,&quot;doc&quot;,&quot;jpg&quot;,&quot;png&quot;,&quot;docx&quot;,&quot;jpeg&quot;]" data-rsfp-size="16384000" /> <span class="style-480"><span class="style-481">Carica il Codice Fiscale</span></span>
+            </div>
+        </div>
+        <div class="style-482">
+            <label class="style-483" data-uk-tooltip="{pos:'top-left'}" Max="" File:="" 12Mb="" Estensioni="" File="" Ammesse:="" PDF,="" JPG,="" PNG,="" ZIP,="" RAR,="" DOC,="" for="UpLoadVisuraCam">Invia Visura Camerale<br class="style-484" />(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</label>
+            <div class="style-485">
+                <input type="file" name="form[UpLoadVisuraCam]" class="style-486" data-rsfp-exts="[&quot;pdf&quot;,&quot;zip&quot;,&quot;rar&quot;,&quot;doc&quot;,&quot;jpg&quot;,&quot;png&quot;,&quot;docx&quot;,&quot;jpeg&quot;]" data-rsfp-size="16384000" /> <span class="style-487"><span class="style-488">Carica la Visura Camerale</span></span>
+            </div>
+        </div>
+        <div class="style-489">
+            <p class="style-490"><strong class="style-491">Accetta la normativa sulla privacy</strong></p>
+        </div>
+        <div class="style-492">
+            <label class="style-493" data-uk-tooltip="{pos:'top-left'}" title="" for="Message" aria-invalid="false">Note</label>
+            <div class="style-494">
+                <textarea cols="50" rows="5" name="form[Message]" placeholder="Note" class="style-495"></textarea> <span class="style-496"><span class="style-497"></span></span>
+            </div>
+        </div>
+        <div class="style-498">
+            Presa visione dell'informativa sulla privacy, da consultare a <a href="https://www.agdistribuzione.it/privacy.html" target="_blank" class="style-499">questo link</a>:
+        </div>
+        <div class="style-500">
+            <label class="style-501" data-uk-tooltip="{pos:'top-left'}" title="">relativamente al punto 1.A<strong class="style-502">Obbligatorio</strong></label>
+            <div class="style-503" role="group" aria-labelledby="privacyaccept-grouplbl">
+                <div aria-required="true" class="style-504"><label for="privacyaccept0" aria-invalid="false" class="style-505"><input type="checkbox" name="form[privacyaccept][]" value="Presto il consenso" class="style-506" /> Presto il consenso</label> </div> <span class="style-507"><span class="style-508">Valore non valido</span></span>
+            </div>
+        </div>
+        <div class="style-509">
+            <label class="style-510" data-uk-tooltip="{pos:'top-left'}" title="">relativamente al punto 1.B<strong class="style-511">Obbligatorio</strong></label>
+            <div class="style-512" role="group" aria-labelledby="privacyaccepttwo-grouplbl">
+                <div aria-required="true" class="style-513"><label for="privacyaccepttwo0" aria-invalid="false" class="style-514"><input type="radio" name="form[privacyaccepttwo]" value="Presto il consenso" class="style-515" /> Presto il consenso</label> <label for="privacyaccepttwo1" aria-invalid="false" class="style-516"><input type="radio" name="form[privacyaccepttwo]" value="Nego il consenso" class="style-517" /> Nego il consenso</label> </div> <span class="style-518"><span class="style-519">Valore non valido</span></span>
+            </div>
+        </div>
+        <div class="style-520">
+            <label class="style-521" data-uk-tooltip="{pos:'top-left'}" title=""></label>
+            <div class="style-522">
+                <input type="submit" name="form[Send]" class="style-523" value="Invia" /> <input type="reset" class="style-524" onclick="RSFormPro.resetElements(10)" value="Reset" /> <span class="style-525"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

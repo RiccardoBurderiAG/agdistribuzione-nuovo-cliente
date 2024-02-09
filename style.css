@@ -1,0 +1,88 @@
+body {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #000;
+    margin: 0;
+}
+
+.headerContainer {
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.mainContainer {
+    padding: 20px 0;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    max-width: 1024px;
+}
+
+.formContainer {
+    max-width: 700px;
+    display: flex;
+    margin: 0px auto 0;
+}
+
+h2 {
+    color: #de0000;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+    font-size: 90px;
+    line-height: 70px;
+    font-weight: 900;
+    margin: 0 auto 40px;
+    padding: 0;
+    border: none;
+    font-family: "Exo 2", sans-serif;
+}
+
+p {
+}
+
+.subP {
+
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.labelStrong {
+
+}
+
+.required {
+
+}
+
+.submitButton {
+
+}
+
+.submitButton-black {
+
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 10px;
+    background: #fff;
+    font-size: 16px;
+    border: 1px solid #666;
+}
+
+/* media query for tablet landscape*/
+@media screen and (max-width: 992px) {
+
+}
