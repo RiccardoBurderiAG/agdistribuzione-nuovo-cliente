@@ -21,12 +21,12 @@
             new FormData(e.target).forEach((value, key) => {
                 formData[key] = value;
             });
-    
-            // Access and log the values
-            const codice_agente = formData.codice_agente;
-            const listino = formData.listino;
-            const condizioni_pagamento = formData.condizioni_pagamento;
-            console.log(`codice_agente: ${codice_agente}, listino: ${listino}, condizioni_pagamento: ${condizioni_pagamento}`);
+            // send mail
+            handleSendMail(formData);
+        }
+
+        function handleSendMail(form) {
+            console.log({...form});
         }
     </script>
 </head>
