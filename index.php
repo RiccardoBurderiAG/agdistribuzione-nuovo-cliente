@@ -13,14 +13,20 @@
         function resetForm() {
         }
         
+        //handleresetForm
         function handleSubmit(e) {
-            e.preventDefault()
-            //handleresetForm
-            const inputValues = e.target;
-            inputValues.forEach((input, index) => {
-                console.log(input.elements[index].value)
-                
+            e.preventDefault();
+
+            const formData = {};
+            new FormData(e.target).forEach((value, key) => {
+                formData[key] = value;
             });
+    
+            // Access and log the values
+            const codice_agente = formData.codice_agente;
+            const listino = formData.listino;
+            const condizioni_pagamento = formData.condizioni_pagamento;
+            console.log(`codice_agente: ${codice_agente}, listino: ${listino}, condizioni_pagamento: ${condizioni_pagamento}`);
         }
     </script>
 </head>
@@ -43,12 +49,12 @@
             <form method="post" id="nuovoClienteForm" enctype="multipart/form-data" onsubmit="return handleSubmit(event)">
                 <div class="inputGroupContainer">
                     <div class="inputContainer">
-                        <label for="nuovoClienteForm">Codice Agente<div class="labelStrong">obbligatorio</div></label>
-                        <input type="text" id="nuovoClienteForm" name="nuovoClienteForm" placeholder="Codice Agente*">
+                        <label for="codice_agente">Codice Agente<div class="labelStrong">obbligatorio</div></label>
+                        <input type="text" id="codice_agente" name="codice_agente" placeholder="Codice Agente*">
                     </div>
                     <div class="inputContainer">
                         <label for="nuovoClienteForm">Listino<div class="labelStrong">obbligatorio</div></label>
-                        <select class="inputSelect" name="" id="">
+                        <select class="inputSelect" name="listino" id="listino">
                             <option value>Selezione</option>
                             <option value="4A">4A</option>
                             <option value="5A">5A</option>
@@ -58,8 +64,8 @@
                 </div>
                 <div class="inputGroupContainer">
                     <div class="inputContainer">
-                        <label for="nuovoClienteForm">Codice Agente<div class="labelStrong">obbligatorio</div></label>
-                        <input type="text" id="nuovoClienteForm" name="nuovoClienteForm" placeholder="Codece Agente*">
+                        <label for="condizioni_pagamento">Condizioni Pagamento<div class="labelStrong">obbligatorio</div></label>
+                        <input type="text" id="condizioni_pagamento" name="condizioni_pagamento" placeholder="Condizioni Pagamento*">
                         
                     </div>
                 </div>
