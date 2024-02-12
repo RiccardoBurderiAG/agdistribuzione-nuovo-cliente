@@ -248,8 +248,10 @@ input[type="text"]:focus, .inputSelect:focus {
 .inputFileGroupContainer {
     margin-bottom: 10px;
 }
-.inputFile {
+.inputFile input {
     border: none;
+    padding: 10px 0px;
+    cursor: pointer;
 }
 
 .privacySection {

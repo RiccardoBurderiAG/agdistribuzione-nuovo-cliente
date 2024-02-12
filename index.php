@@ -319,17 +319,17 @@
                 </div>
                 <div class="inputGroupContainer inputFileGroupContainer">
                     <div class="inputContainer inputFile">
-                        <label for="upload_documento"><strong>Invia Documento d'identità (Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
+                        <label for="upload_documento"><strong>Invia Documento d'identità </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
                         <input type="file" onchange="return checkFileSizes(event)" id="upload_documento" name="upload_documento" accept=".pdf, .jpg, .png, .zip, .rar, .doc, .docx">
                     </div>
                     <div class="inputContainer inputFile">
-                        <label for="upload_cod_fiscale"><strong>Invia Codice Fiscale (Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
+                        <label for="upload_cod_fiscale"><strong>Invia Codice Fiscale </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
                         <input type="file" onchange="return checkFileSizes(event)" id="upload_cod_fiscale" name="upload_cod_fiscale" accept=".pdf, .jpg, .png, .zip, .rar, .doc, .docx">
                     </div>
                 </div>
                 <div class="inputGroupContainer">
                     <div class="inputContainer inputFile halfInput">
-                        <label for="upload_visura_cam"><strong>Invia Visura Camerale (Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
+                        <label for="upload_visura_cam"><strong>Invia Visura Camerale </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
                         <input type="file" onchange="return checkFileSizes(event)" id="upload_visura_cam" name="upload_visura_cam" accept=".pdf, .jpg, .png, .zip, .rar, .doc, .docx">
                     </div>
                 </div>
@@ -349,7 +349,7 @@
                 </div>
 
                 <div>
-                    <p>Presa visione dell'informativa sulla privacy, da consultare a <a href="https://www.agdistribuzione.it/privacy.html" about="_blank">questo link</a></p>
+                    <p>Presa visione dell'informativa sulla privacy, da consultare a <a href="https://www.agdistribuzione.it/privacy.html" target="_blank">questo link</a></p>
                     <div class="privacySection">
                         <div>
                             <label>relativamente al punto 1.A<div class="labelStrong">obbligatorio</div></label>
