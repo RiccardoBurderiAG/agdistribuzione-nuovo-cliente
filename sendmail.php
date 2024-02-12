@@ -42,12 +42,12 @@ $message = "";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$agency_type =  isset( $_POST['agency_type'] ) ? $_POST['agency_type'] : '' ;
-	$closing_day =  isset( $_POST['closing_day'] ) ? $_POST['closing_day'] : '' ;
+	$closing_day =  isset( $_POST['closing_day'] ) ? $_POST['closing_day'] : [] ;
 	$array_closing_day = implode(", <br/>", $closing_day);
 
 	$to = "riccardo.burderi@aghoreca.com"; // Your email address
 	//$name = "$_POST['name']";
-	$from = "info@agdistribuzione.it";
+	$from = "info@agdistribuzione.com";
 	//$phone = $_POST['mobile'];
 	$message = "<!DOCTYPE html>
 	<html>
@@ -63,13 +63,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$subject = "Test mail";
 	
 	// Set content-type header for sending HTML email 
-	$headers = array("From: info@agdistribuzione.it",
-		"Reply-To: info@agdistribuzione.it",
+	$headers = array("From: info@agdistribuzione.com",
+		"Reply-To: info@agdistribuzione.com",
 		"X-Mailer: PHP/" . phpversion()
 	);
 	$headers = implode("\r\n", $headers);
 
-	$result = mail($to, $subject, $message, $headers);
+	$result = mail($to, $subject, $message, $headers, $from);
 	if ($result) {
 		// $message = "Your Message was sent Successfully!";
 		echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
