@@ -87,31 +87,31 @@
                     <label for="closing_day" class="normalLabel">Giorni di chiusura</label>
                     <div>
                         <label class="radioInput" for="closing_day_0">
-                            <input type="checkbox" name="closing_day" value="Lun" id="closing_day_0">
+                            <input type="checkbox" name="closing_day[]" value="Lun" id="closing_day_0">
                             Lun
                         </label>
                         <label class="radioInput" for="closing_day_1">
-                            <input type="checkbox" name="closing_day" value="Mar" id="closing_day_1">
+                            <input type="checkbox" name="closing_day[]" value="Mar" id="closing_day_1">
                             Mar
                         </label>
                         <label class="radioInput" for="closing_day_2">
-                            <input type="checkbox" name="closing_day" value="Mer" id="closing_day_2">
+                            <input type="checkbox" name="closing_day[]" value="Mer" id="closing_day_2">
                             Mer
                         </label>
                         <label class="radioInput" for="closing_day_3">
-                            <input type="checkbox" name="closing_day" value="Gio" id="closing_day_3">
+                            <input type="checkbox" name="closing_day[]" value="Gio" id="closing_day_3">
                             Gio
                         </label>
                         <label class="radioInput" for="closing_day_4">
-                            <input type="checkbox" name="closing_day" value="Ven" id="closing_day_4">
+                            <input type="checkbox" name="closing_day[]" value="Ven" id="closing_day_4">
                             Ven
                         </label>
                         <label class="radioInput" for="closing_day_5">
-                            <input type="checkbox" name="closing_day" value="Sab" id="closing_day_5">
+                            <input type="checkbox" name="closing_day[]" value="Sab" id="closing_day_5">
                             Sab
                         </label>
                         <label class="radioInput" for="closing_day_6">
-                            <input type="checkbox" name="closing_day" value="Dom" id="closing_day_5">
+                            <input type="checkbox" name="closing_day[]" value="Dom" id="closing_day_5">
                             Dom
                         </label>
                     </div>

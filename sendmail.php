@@ -37,9 +37,14 @@ $message = "";
 
 // da: isset($_POST['submit'])
 // a: if($_SERVER['REQUEST_METHOD'] === 'POST') {}
+
+// TODO handle success mail send -> check delivery
+
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-	$agency_type = $_POST["agency_type"];
-	$closing_day = $_POST["closing_day"];
+	$agency_type =  isset( $_POST['agency_type'] ) ? $_POST['agency_type'] : '' ;
+	$closing_day =  isset( $_POST['closing_day'] ) ? $_POST['closing_day'] : '' ;
+	$array_closing_day = implode(", <br/>", $closing_day);
+
 	$to = "riccardo.burderi@aghoreca.com"; // Your email address
 	//$name = "$_POST['name']";
 	$from = "info@agdistribuzione.it";
@@ -49,9 +54,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	<head>
 	</head>
 	<body>
-        <p>Test Email</p>
-        <p>$agency_type</p>
-        <p>$closing_day</p>
+		<p>Test Email</p>
+		<p>$agency_type</p>
+		<p>$array_closing_day</p>
 	</body>
 	</html>";
 	

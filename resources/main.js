@@ -6,7 +6,6 @@ $(document).ready(function() {
     $('#nuovoClienteForm').submit(function(e) {
         e.preventDefault();
         var form = jQuery('#nuovoClienteForm');
-        console.log(form)
         $.ajax({
             url: 'sendmail.php',
             data: form.serialize(),
