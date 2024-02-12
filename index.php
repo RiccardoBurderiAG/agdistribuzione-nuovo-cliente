@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap|Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="./resources/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="mainContainer">
@@ -23,8 +24,10 @@
         </div>
         <!-- TODO add message of success "Tutti i dati sono stati inviati correttamente. Grazie." -->
         <div class="formContainer">
+            <?php include "sendmail.php"; ?>
             <!-- TODO change action to action="https://www.agdistribuzione.it/agenti/nuovo-cliente" -->
-            <form method="post" id="nuovoClienteForm" enctype="multipart/form-data" onsubmit="return handleSubmit(event)">
+            <!-- onsubmit="return handleSubmit(event)"-->
+            <form method="post" id="nuovoClienteForm" enctype="multipart/form-data">
                 <div class="inputGroupContainer">
                     <div class="inputContainer">
                         <label for="codice_agente">Codice Agente<div class="labelStrong">obbligatorio</div></label>
@@ -71,7 +74,7 @@
                             SPA
                         </label>
                         <label class="radioInput" for="agency_type_4">
-                            <input type="radio" name="agency_type" value="COoP ARL" id="agency_type_4">
+                            <input type="radio" name="agency_type" value="COOP ARL" id="agency_type_4">
                             COOP ARL
                         </label>
                         <label class="radioInput" for="agency_type_5">
@@ -118,9 +121,9 @@
                     <input type="submit" name="formSend" id="Send" class="sendButton sendFormData" value="Invia">
                     <input type="submit" name="formSend" id="Send" class="sendButton sendButton-black sendFormDataReset" onclick="resetForm()" value="Reset">
                 </div>
-
             </form>
         </div>
     </div>
 </body>
+<script src="./resources/main.js"></script>
 </html>
