@@ -353,18 +353,18 @@
                         <div>
                             <label>relativamente al punto 1.A<div class="labelStrong">obbligatorio</div></label>
                             <label class="radioInput" for="privacy_accept_1">
-                            <input type="checkbox" name="privacy_accept_1" value="privacy_accept_1" id="privacy_accept_1" required>
+                            <input type="checkbox" name="privacy_accept_1" value="Presto il consenso" id="privacy_accept_1" required>
                                 Presto il consenso
                             </label>
                         </div>
                         <div>
-                            <label>relativamente al punto 1.B<div class="labelStrong">obbligatorio</div></label>
+                            <label for="privacy_accept_2">relativamente al punto 1.B<div class="labelStrong">obbligatorio</div></label>
                             <label class="radioInput" for="privacy_accept_2_1">
-                            <input type="radio" name="privacy_accept_2" value="privacy_accept_2_1" id="privacy_accept_2_1" required>
+                            <input type="radio" name="privacy_accept_2" value="Presto il consenso" id="privacy_accept_2_1" required>
                                 Presto il consenso
                             </label>
                             <label class="radioInput" for="privacy_accept_2_2">
-                            <input type="radio" name="privacy_accept_2" value="privacy_accept_2_2" id="privacy_accept_2_2" required>
+                            <input type="radio" name="privacy_accept_2" value="Nego il consenso" id="privacy_accept_2_2" required>
                                 Nego il consenso
                             </label>
                         </div>

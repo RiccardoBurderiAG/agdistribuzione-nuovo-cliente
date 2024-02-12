@@ -121,9 +121,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 				
 				<tr><td>Note</td> <td>$message_note</td></tr>
 
-				<tr><td colspan='2'></td></tr>
-				<tr><td>privacyaccept</td> <td>$privacy_accept_1</td></tr>
-				<tr><td>privacyaccepttwo</td> <td>$privacy_accept_2</td></tr>
+				<tr><td colspan='2'><h3>Presa visione sulla privacy</h3></td></tr>
+				<tr><td>relativamente al punto 1.A</td> <td>$privacy_accept_1</td></tr>
+				<tr><td>relativamente al punto 1.B</td> <td>$privacy_accept_2</td></tr>
 				</table>
 				</body>
 	</html>";
