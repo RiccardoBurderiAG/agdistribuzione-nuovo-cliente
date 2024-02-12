@@ -1,15 +1,16 @@
 <?php
 $message = ""; 
-$codiceagente_error = $email_error = $gender_error = $website_error = "";
-
+$codiceagente_error = "";         
+$codice_agente = "";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-	$codice_agente = isset( $_POST['codice_agente']) ? $_POST['codice_agente'] : '';
+	$codice_agente = isset( $_POST['codice_agente']) ? $_POST['codice_agente'] : $codiceagente_error="Inserire il codice agente";
 	$listino = isset( $_POST['listino']) ? $_POST['listino'] : '';
 	$condizioni_pagamento = isset( $_POST['condizioni_pagamento']) ? $_POST['condizioni_pagamento'] : '';
 	$agency_type = isset( $_POST['agency_type']) ? $_POST['agency_type'] : '';
 	$titolare = isset( $_POST['titolare']) ? $_POST['titolare'] : '';
 	$denominazione = isset( $_POST['denominazione']) ? $_POST['denominazione'] : '';
+
 	//handle select
 	//$attivita = isset( $_POST['attivita']) ? $_POST['attivita'] : '';
 	$tel = isset( $_POST['tel']) ? $_POST['tel'] : '';
@@ -19,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$closing_day_details = isset( $_POST['closing_day_details']) ? $_POST['closing_day_details'] : '';
 	$address = isset( $_POST['address']) ? $_POST['address'] : '';
 	$cap = isset( $_POST['cap']) ? $_POST['cap'] : '';
+
 	//handle select
 	//$province = isset( $_POST['province']) ? $_POST['province'] : '';
 	$city = isset( $_POST['city']) ? $_POST['city'] : '';
@@ -26,6 +28,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$unique_code = isset( $_POST['unique_code']) ? $_POST['unique_code'] : '';
 	$merci_address = isset( $_POST['merci_address']) ? $_POST['merci_address'] : '';
 	$merci_cap = isset( $_POST['merci_cap']) ? $_POST['merci_cap'] : '';
+
 	//handle select
 	//$merci_province = isset( $_POST['merci_province']) ? $_POST['merci_province'] : '';
 	$merci_city = isset( $_POST['merci_city']) ? $_POST['merci_city'] : '';
@@ -47,11 +50,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 
 	// Handle Errors 
-	if (empty($_POST["codice_agente"])) {
-		$codiceagente_error = "Inserire il codice_agente";
-	  } else {
-		$codice_agente = $_POST["codice_agente"];
-	}
 
 	$to = "riccardo.burderi@aghoreca.com"; // ordinierregi@gmail.com //cc: rita.alescio@adtradingsrl.eu
 	//$name = "$_POST['name']";
@@ -63,6 +61,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	</head>
 	<body>
 		<p>Test Email</p>
+		<p>$codice_agente</p>
 		<p>$agency_type</p>
 		<p>$array_closing_day</p>
 	</body>
@@ -83,7 +82,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		// $message = "Your Message was sent Successfully!";
 		echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
 		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
-		echo $message;
 
 	}else{
 		// $message = "Sorry! Message was not sent, Try again Later.";
