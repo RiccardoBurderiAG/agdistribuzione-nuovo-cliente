@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +60,10 @@
                     <div class="inputContainer">
                         <label for="condizioni_pagamento">Condizioni Pagamento<div class="labelStrong">obbligatorio</div></label>
                         <input type="text" id="condizioni_pagamento" name="condizioni_pagamento" placeholder="Condizioni Pagamento*" required>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="email_agente">Email Agente</label>
+                        <input type="text" id="email_agente" name="email_agente" placeholder="Email Agente*">
                     </div>
                 </div>
                 <!-- Fine Info Agente -->
