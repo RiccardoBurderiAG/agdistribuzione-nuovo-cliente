@@ -269,7 +269,6 @@ input[type="text"]:focus, .inputSelect:focus {
     margin: 0px;
 }
 
-
 /* media query for tablet landscape*/
 @media screen and (max-width: 767px) {
     h2 {
