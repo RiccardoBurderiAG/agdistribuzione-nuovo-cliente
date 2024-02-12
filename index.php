@@ -63,7 +63,7 @@
                     </div>
                     <div class="inputContainer">
                         <label for="email_agente">Email Agente</label>
-                        <input type="text" id="email_agente" name="email_agente" placeholder="Email Agente*">
+                        <input type="email" id="email_agente" name="email_agente" placeholder="Email Agente*">
                     </div>
                 </div>
                 <!-- Fine Info Agente -->

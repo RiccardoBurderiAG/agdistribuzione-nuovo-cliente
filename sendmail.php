@@ -32,26 +32,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$iban = isset( $_POST['iban']) ? $_POST['iban'] : '';
 	$responsabile = isset( $_POST['responsabile']) ? $_POST['responsabile'] : '';
 	$message_note = isset( $_POST['message_note']) ? $_POST['message_note'] : '';
-
-    // upload documents
-    $upload_documento='';
-    $upload_documento_attachment='';
-    if ($_FILES['$upload_documento']['error'] != 4 && ($_FILES['$upload_documento']['size'] != 0 && $_FILES['$upload_documento']['error'] != 0)) {
-        $upload_documento = $_FILES['$upload_documento'];
-        $upload_documento_attachment=prepareAttachment($upload_documento["tmp_name"],$upload_documento["tmp_name"]["name"]);
-    }
-    // $upload_cod_fiscale='';
-    // $upload_cod_fiscale_attachment='';
-    // if ($_FILES['$upload_cod_fiscale']['error'] != 4 && ($_FILES['$upload_cod_fiscale']['size'] != 0 && $_FILES['$upload_cod_fiscale']['error'] != 0)) {
-    //     $upload_cod_fiscale = $_FILES['$upload_cod_fiscale'];
-    //     $upload_cod_fiscale_attachment=prepareAttachment($upload_cod_fiscale["tmp_name"],$upload_cod_fiscale["tmp_name"]["name"])
-    // }
-    // $upload_visura_cam='';
-    // $upload_visura_cam_attachment='';
-    // if ($_FILES['$upload_visura_cam']['error'] != 4 && ($_FILES['$upload_visura_cam']['size'] != 0 && $_FILES['$upload_visura_cam']['error'] != 0)) {
-    //     $upload_visura_cam = $_FILES['$upload_visura_cam'];
-    //     $upload_visura_cam_attachment=prepareAttachment($upload_visura_cam["tmp_name"],$upload_visura_cam["tmp_name"]["name"])
-    // }
 	
     $privacy_accept_1 = isset( $_POST['privacy_accept_1']) ? $_POST['privacy_accept_1'] : '';
 	$privacy_accept_2 = isset( $_POST['privacy_accept_2']) ? $_POST['privacy_accept_2'] : '';
@@ -135,36 +115,55 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	</html>";
     
     //concat the uploaded files to message
-    $message .= $upload_documento_attachment;
+    // $message .= $upload_documento_attachment;
     // $message .= $upload_cod_fiscale_attachment;
     // $message .= $upload_visura_cam_attachment;
 
 	$subject = "Inserimento nuovo cliente";
 	
 	// Set content-type header to send HTML email 
-    $semi_rand = md5(time()); 
-    $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+    $random_hash = md5(date('r', time())); 
+    $attachment = chunk_split(base64_encode(file_get_contents($_FILES['$upload_documento']['name']))); 
+
+    // TODO visit https://www.geeksforgeeks.org/php-send-attachment-email/
 	$headers = array( "MIME-Version: 1.0" ,
         "Content-Type: multipart/mixed;\n",
-        " boundary=\"{$mime_boundary}\"", 
-        "This is a multi-part message in MIME format.\n\n",
-        "--{$mime_boundary}\n",
+        " boundary=\"PHP-mixed-".$random_hash."\"",
         "Content-Transfer-Encoding: 7bit\n\n",
 		"Content-type: text/html; charset=iso-8859-1",
 		"From: info@agdistribuzione.com",
 		"Reply-To: info@agdistribuzione.com",
 		"X-Mailer: PHP/" . phpversion(),
 		//"cc: rita.alescio@adtradingsrl.eu"
-	);
+    );
+    // upload documents
+    // $upload_documento='';
+    // $upload_documento_attachment='';
+    // if ($_FILES['$upload_documento']['error'] != 4 && ($_FILES['$upload_documento']['size'] != 0 && $_FILES['$upload_documento']['error'] != 0)) {
+    //     $upload_documento = $_FILES['$upload_documento'];
+    //     $upload_documento_attachment=prepareAttachment($upload_documento["tmp_name"],$upload_documento["tmp_name"]["name"]);
+    // }
+    // $upload_cod_fiscale='';
+    // $upload_cod_fiscale_attachment='';
+    // if ($_FILES['$upload_cod_fiscale']['error'] != 4 && ($_FILES['$upload_cod_fiscale']['size'] != 0 && $_FILES['$upload_cod_fiscale']['error'] != 0)) {
+    //     $upload_cod_fiscale = $_FILES['$upload_cod_fiscale'];
+    //     $upload_cod_fiscale_attachment=prepareAttachment($upload_cod_fiscale["tmp_name"],$upload_cod_fiscale["tmp_name"]["name"])
+    // }
+    // $upload_visura_cam='';
+    // $upload_visura_cam_attachment='';
+    // if ($_FILES['$upload_visura_cam']['error'] != 4 && ($_FILES['$upload_visura_cam']['size'] != 0 && $_FILES['$upload_visura_cam']['error'] != 0)) {
+    //     $upload_visura_cam = $_FILES['$upload_visura_cam'];
+    //     $upload_visura_cam_attachment=prepareAttachment($upload_visura_cam["tmp_name"],$upload_visura_cam["tmp_name"]["name"])
+    // }
 	$headers = implode("\r\n", $headers);
-
+    //$result = 1;
 	$result = mail($to, $subject, $message, $headers, $from);
 	if ($result) {
 		echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
 		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
-		
-		echo $privacy_accept_1;
-		echo $privacy_accept_2;
+		//echo $message;
+		echo $upload_documento_attachment;
+
 
 	}else{
 		// $message = "Sorry! Message was not sent, Try again Later.";
