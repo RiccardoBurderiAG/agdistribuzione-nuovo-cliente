@@ -45,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$closing_day =  isset( $_POST['closing_day'] ) ? $_POST['closing_day'] : [] ;
 	$array_closing_day = implode(", <br/>", $closing_day);
 
-	$to = "riccardo.burderi@aghoreca.com"; // Your email address
+	$to = "riccardo.burderi@aghoreca.com"; // ordinierregi@gmail.com //cc: rita.alescio@adtradingsrl.eu
 	//$name = "$_POST['name']";
 	$from = "info@agdistribuzione.com";
 	//$phone = $_POST['mobile'];
@@ -65,7 +65,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	// Set content-type header for sending HTML email 
 	$headers = array("From: info@agdistribuzione.com",
 		"Reply-To: info@agdistribuzione.com",
-		"X-Mailer: PHP/" . phpversion()
+		"X-Mailer: PHP/" . phpversion(),
+		//"cc: rita.alescio@adtradingsrl.eu"
 	);
 	$headers = implode("\r\n", $headers);
 
