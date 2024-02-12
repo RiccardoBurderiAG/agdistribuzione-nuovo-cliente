@@ -5,9 +5,9 @@ $message = "";
 //condizioni_pagamento
 //agency_type
 //titolare
-//denominata
+//denominazione
 //attivita
-//phone
+//tel
 //email_cliente
 //pec
 //closing_day
@@ -17,7 +17,7 @@ $message = "";
 //province
 //city
 //vat
-//cod_univoco
+//unique_code
 //merci_address
 //merci_cap
 //merci_province
