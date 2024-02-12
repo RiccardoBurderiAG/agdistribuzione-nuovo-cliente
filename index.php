@@ -343,8 +343,8 @@
                 <div class="separator"></div>
                 <div class="spacer"></div>
                 <div class="inputContainer inputTextArea">
-                    <label for="message" style="align-self: flex-start">Note</label>
-                    <textarea name="message" id="message" rows="5" cols="50" placeholder="Note"></textarea>
+                    <label for="message_note" style="align-self: flex-start">Note</label>
+                    <textarea name="message_note" id="message_note" rows="5" cols="50" placeholder="Note"></textarea>
                 </div>
 
                 <div>
