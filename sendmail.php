@@ -118,19 +118,31 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$mime_boundary = "=={$semi_rand}"; 
 	
 	//header section
-	$headers = array( "MIME-Version: 1.0",
+/* 	$headers = array( "MIME-Version: 1.0",
 		"From: info@agdistribuzione.com", 
 		"Reply-To: info@agdistribuzione.com",
-		//"Content-Type: multipart/alternative;",
+		//"Content-Type: multipart/mixed;",
+		//"boundary=\"{$mime_boundary}\""."\n",
 		//"X-Mailer: PHP/" . phpversion() . "\n",
 		//"cc: rita.alescio@adtradingsrl.eu, ". $email_agente,
-		"Content-Type: text/html; charset=UTF-8",
-		"Content-Transfer-Encoding: quoted-printable\n",
-		//"boundary=\"{$mime_boundary}\""."\n",
+		//"Content-Type: text/html; charset=UTF-8",
+		//"Content-Transfer-Encoding: quoted-printable\n",
     );	
+	$headers = implode("\n", $headers); */
 
-	$headers = implode("\n", $headers);
-	
+	$headers = "MIME-Version: 1.0\n";
+	$headers .= "From: info@agdistribuzione.com\n";
+	$headers .= "Reply-To: info@agdistribuzione.com\n";
+
+	if(!empty(isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) ||
+		!empty(isset($_FILES['codfiscale']) && $_FILES['codfiscale']['error'] == 0) ||
+		!empty(isset($_FILES['visuracam']) && $_FILES['visuracam']['error'] == 0)
+	) {
+        $headers .= "Content-type: multipart/mixed; boundary=\"".$mime_boundary."\"\n";
+    } else {
+        $headers .= "Content-type: text/html; charset=iso-8859-1\n";
+    }
+
 	//message section	
 	$message = $htmlBody;	
 	// check if file has correct exension
@@ -139,45 +151,87 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	// 	echo "Mime type valid";
 	// }
 
-	//$message = "--{$mime_boundary}\n" . "Content-Transfer-Encoding: 7bit\n\n" ."Content-Type: text/html; charset=\"UTF-8\"\n" . "MIME-Version: 1.0 \n\n". $body . "\n\n";
-
-
-
 	//upload document section
-	if (isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) {
-		$tmp_name = '';
-		$name = '';
-		$size = '';
-		$type = '';
-		$error = '';
+	if(!empty(isset($_FILES))) {
+		$output = "--{$mime_boundary}\n";
+		$output .= "Content-type: text/html; charset=iso-8859-1\n";
+		$output .= "Content-Transfer-Encoding: quoted-printable\n\n";
+		$output .= $htmlBody;
+		$output .= "\n\n";
 
-		$message .= "--{$mime_boundary}\n"; 
-		$tmp_name = $_FILES['documento']['tmp_name']; // get the temporary file name of the file on the server
-		$name = $_FILES['documento']['name']; // get the name of the file
-		$size = $_FILES['documento']['size']; // get size of the file for size validation
-		$type = $_FILES['documento']['type']; // get type of the file
-		$error = $_FILES['documento']['error']; // get the error (if any)	
-		
-		$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
-		$content = fread($handle, $size); // reading the file
-		fclose($handle);                 // close upon completion
-		
-		$encoded_content = chunk_split(base64_encode($content));
-		
-		//encode files to message
+		if (isset($_FILES['documento'])) {
+			$tmp_name = $_FILES['documento']['tmp_name']; // get the name of the file
+			$name = $_FILES['documento']['name']; // get the name of the file
+			$size = $_FILES['documento']['size']; // get size of the file for size validation
+			$type = $_FILES['documento']['type']; // get type of the file
+			$error = $_FILES['documento']['error']; // get the error (if any)
+			
+			
+			$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
+			$content = fread($handle, $size); // reading the file
+			fclose($handle);                 // close upon completion
+			
+			$encoded_content = chunk_split(base64_encode($content));
+			
+			$output .= "--{$mime_boundary}\n\n";
+			$output .="Content-Type: " .$type. "; name=\"".$name."\"\n";
+			$output .="Content-Description: ".$name."\n";
+			$output .="Content-Disposition: attachment;\n" . "filename=\"".$name."\"\n" ;
+			$output .="Content-Transfer-Encoding: base64\n\n".$encoded_content. "\n\n";
+		}
 
-		$message .="Content-Type: $type; name=\"".$name."\"\n";
-		$message .="Content-Description: ".$name."\n";
-		$message .="Content-Disposition: multipart/form-data;\n" . "filename=\"".$name."\"; size=".$size.";\n" ;
-		$message .="Content-Transfer-Encoding: base64\n\n". $encoded_content . "\n\n"; 
+		if (isset($_FILES['codfiscale'])) {
+			$tmp_name = $_FILES['codfiscale']['tmp_name']; // get the name of the file
+			$name = $_FILES['codfiscale']['name']; // get the name of the file
+			$size = $_FILES['codfiscale']['size']; // get size of the file for size validation
+			$type = $_FILES['codfiscale']['type']; // get type of the file
+			$error = $_FILES['codfiscale']['error']; // get the error (if any)
+			
+			
+			$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
+			$content = fread($handle, $size); // reading the file
+			fclose($handle);                 // close upon completion
+			
+			$encoded_content = chunk_split(base64_encode($content));
+			
+			$output .= "--{$mime_boundary}\n\n";
+			$output .="Content-Type: " .$type. "; name=\"".$name."\"\n";
+			$output .="Content-Description: ".$name."\n";
+			$output .="Content-Disposition: attachment;\n" . "filename=\"".$name."\"\n" ;
+			$output .="Content-Transfer-Encoding: base64\n\n".$encoded_content. "\n\n";
+		}
+
+		if (isset($_FILES['visuracam'])) {
+			$tmp_name = $_FILES['visuracam']['tmp_name']; // get the name of the file
+			$name = $_FILES['visuracam']['name']; // get the name of the file
+			$size = $_FILES['visuracam']['size']; // get size of the file for size validation
+			$type = $_FILES['visuracam']['type']; // get type of the file
+			$error = $_FILES['visuracam']['error']; // get the error (if any)
+			
+			
+			$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
+			$content = fread($handle, $size); // reading the file
+			fclose($handle);                 // close upon completion
+			
+			$encoded_content = chunk_split(base64_encode($content));
+			
+			$output .= "--{$mime_boundary}\n\n";
+			$output .="Content-Type: " .$type. "; name=\"".$name."\"\n";
+			$output .="Content-Description: ".$name."\n";
+			$output .="Content-Disposition: attachment;\n" . "filename=\"".$name."\"\n" ;
+			$output .="Content-Transfer-Encoding: base64\n\n".$encoded_content. "\n\n";
+		}
+
+		return mail($to, $subject, $output, $headers);
+	} else {
+		return mail($to, $subject, $message, $headers);
 	}
 
-	$result = mail($to, $subject, $message, $headers, $from);
+	$output .= "--{$mime_boundary}";
 
 	if ($result) {
-		print_r($_FILES);
-		// echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
-		// echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
+		echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
+		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
 	}else{
 		echo '<script type="text/javascript">alert("Sorry! Message was not sent, Try again Later.");</script>';
 		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
