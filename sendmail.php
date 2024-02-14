@@ -128,7 +128,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		//"X-Mailer: PHP/" . phpversion() . "\n",
 		//"cc: rita.alescio@adtradingsrl.eu, ". $email_agente,
 		"Content-Type: text/html; charset=UTF-8",
-		"Content-Transfer-Encoding: 7bit",
+		"Content-Transfer-Encoding: 7bit\n",
 		//"boundary=\"{$mime_boundary}\""."\n",
     );	
 
