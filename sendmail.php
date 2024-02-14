@@ -40,77 +40,78 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$subject = "Inserimento nuovo cliente";
 	$htmlBody = "<!DOCTYPE html>
 	<html>
-	<head>
-	<meta charset='utf-8'>
-	<style type='text/css'>
-        table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        }
-        
-        td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        }
-        
-        tr:nth-child(even) {
-        background-color: #dddddd;
-        }
-	</style>
-	</head>
-    <body>
-		<table>
-			<tr><td><img src='https://www.agdistribuzione.it/images/template/agdistribuzione.jpg' width='200' /></td> <td><h3>Inserimento Nuovo Cliente</h3></td></tr>
+		<head>
+			<meta charset='utf-8'>
+			<style type='text/css'>
+				table {
+				font-family: arial, sans-serif;
+				border-collapse: collapse;
+				width: 100%;
+				}
 				
-				<tr><td colspan='2'><h3>Dettagli Agente, Listino e Condizioni di Pagamento</h3></td></tr>
-				<tr><td>Codice Agente</td> <td>$codice_agente</td></tr>
-				<tr><td>Listino</td> <td>$listino</td></tr>
-				<tr><td>Condizioni Pagamento</td> <td>$condizioni_pagamento</td></tr>
+				td, th {
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 8px;
+				}
 				
-				<tr><td colspan='2'><h3>Dettagli Cliente</h3></td></tr>
-				<tr><td>Tipologia Azienda</td> <td>$agency_type</td></tr>
-				<tr><td>Titolare</td> <td>$titolare</td></tr>
-				<tr><td>Denominazione Commerciale</td> <td>$denominazione</td></tr>
-				<tr><td>Tipo di Attivit&agrave;</td> <td>$attivita</td></tr>
-				<tr><td>Tel</td> <td>$tel</td></tr>
-				<tr><td>Email</td> <td>$email_cliente</td></tr>
-				<tr><td>PEC</td> <td>$pec</td></tr>
-				
-				<tr><td colspan='2'><h3>Indirizzo di Fatturazione</h3></td></tr>
-				<tr><td>Partita Iva</td> <td>$vat</td></tr>
-				<tr><td>Codice Univoco</td> <td>$unique_code</td></tr>
-				<tr><td>Indirizzo Fatturazione</td> <td>$address</td></tr>
-				<tr><td>Cap</td> <td>$cap</td></tr>
-				<tr><td>Citt&agrave;</td> <td>$city</td></tr>
-				<tr><td>Provincia</td> <td>$province</td></tr>
-				
-				
-				<tr><td colspan='2'><h3>Indirizzo di Consegna</h3></td></tr>
-				<tr><td>Indirizzo Destinazione Merci</td> <td>$merci_address</td></tr>
-				<tr><td>Cap</td> <td>$merci_cap</td></tr>
-				<tr><td>Citt&agrave;</td> <td>$merci_city</td></tr>
-				<tr><td>Provincia </td> <td>$merci_province</td></tr>
-				
-				<tr><td>Giorni di Chiusura</td> <td>$array_closing_day</td></tr>
-				<tr><td>Dettagli info giorni Chiusura</td> <td>$closing_day_details</td></tr>
-				
-				<tr><td colspan='2'><h3>Dati Bancari</h3></td></tr>
-				<tr><td>Banca di Appoggio</td> <td>$banca_appoggio</td></tr>
-				<tr><td>Agenzia</td> <td>$banca_agenzia</td></tr>
-				<tr><td>IBAN</td> <td>$iban</td></tr>
-				
-				<tr><td colspan='2'><h3>Dati Responsabile</h3></td></tr>
-				<tr><td>Responsabile</td> <td>$responsabile</td></tr>
-				
-				<tr><td>Note</td> <td>$message_note</td></tr>
+				tr:nth-child(even) {
+				background-color: #dddddd;
+				}
+			</style>
+		</head>
+		<body>
+			<table>
+			<tr><td><img src='https://www.agdistribuzione.it/images/template/agdistribuzione.jpg' width='200' /></td>
+			<td><h3>Inserimento Nuovo Cliente</h3></td></tr>
+			<tr><td colspan='2'><h3>Dettagli Agente, Listino e Condizioni di Pagamento</h3></td></tr>
+			<tr><td>Codice Agente</td> <td>$codice_agente</td></tr>
+			<tr><td>Listino</td> <td>$listino</td></tr>
+			<tr><td>Condizioni Pagamento</td> <td>$condizioni_pagamento</td></tr>
+			<tr><td>Email Agente</td> <td>$email_agente</td></tr>
 
-				<tr><td colspan='2'><h3>Presa visione sulla privacy</h3></td></tr>
-				<tr><td>relativamente al punto 1.A</td> <td>$privacy_accept_1</td></tr>
-				<tr><td>relativamente al punto 1.B</td> <td>$privacy_accept_2</td></tr>
-            </table>
-        </body>
+			<tr><td colspan='2'><h3>Dettagli Cliente</h3></td></tr>
+			<tr><td>Tipologia Azienda</td> <td>$agency_type</td></tr>
+			<tr><td>Titolare</td> <td>$titolare</td></tr>
+			<tr><td>Denominazione Commerciale</td> <td>$denominazione</td></tr>
+			<tr><td>Tipo di Attivit&agrave;</td> <td>$attivita</td></tr>
+			<tr><td>Tel</td> <td>$tel</td></tr>
+			<tr><td>Email</td> <td>$email_cliente</td></tr>
+			<tr><td>PEC</td> <td>$pec</td></tr>
+
+			<tr><td colspan='2'><h3>Indirizzo di Fatturazione</h3></td></tr>
+			<tr><td>Partita Iva</td> <td>$vat</td></tr>
+			<tr><td>Codice Univoco</td> <td>$unique_code</td></tr>
+			<tr><td>Indirizzo Fatturazione</td> <td>$address</td></tr>
+			<tr><td>Cap</td> <td>$cap</td></tr>
+			<tr><td>Citt&agrave;</td> <td>$city</td></tr>
+			<tr><td>Provincia</td> <td>$province</td></tr>
+
+
+			<tr><td colspan='2'><h3>Indirizzo di Consegna</h3></td></tr>
+			<tr><td>Indirizzo Destinazione Merci</td> <td>$merci_address</td></tr>
+			<tr><td>Cap</td> <td>$merci_cap</td></tr>
+			<tr><td>Citt&agrave;</td> <td>$merci_city</td></tr>
+			<tr><td>Provincia </td> <td>$merci_province</td></tr>
+
+			<tr><td>Giorni di Chiusura</td> <td>$array_closing_day</td></tr>
+			<tr><td>Dettagli info giorni Chiusura</td> <td>$closing_day_details</td></tr>
+
+			<tr><td colspan='2'><h3>Dati Bancari</h3></td></tr>
+			<tr><td>Banca di Appoggio</td> <td>$banca_appoggio</td></tr>
+			<tr><td>Agenzia</td> <td>$banca_agenzia</td></tr>
+			<tr><td>IBAN</td> <td>$iban</td></tr>
+
+			<tr><td colspan='2'><h3>Dati Responsabile</h3></td></tr>
+			<tr><td>Responsabile</td> <td>$responsabile</td></tr>
+
+			<tr><td>Note</td> <td>$message_note</td></tr>
+
+			<tr><td colspan='2'><h3>Presa visione sulla privacy</h3></td></tr>
+			<tr><td>relativamente al punto 1.A</td> <td>$privacy_accept_1</td></tr>
+			<tr><td>relativamente al punto 1.B</td> <td>$privacy_accept_2</td></tr>
+			</table>
+		</body>
 	</html>";
 
 	// Boundary  
@@ -137,80 +138,87 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 	//upload document section
 	if(!empty(isset($_FILES))) {
-		$output = "--{$mime_boundary}\n";
+		//$eol = "\r\n";
+		$eol = PHP_EOL;
+
+		$output = "--{$mime_boundary}\r\n";
 		$output .= "Content-type: text/html; charset=iso-8859-1\n";
 		$output .= "Content-Transfer-Encoding: quoted-printable\n\n";
 		$output .= $htmlBody;
-		$output .= "\n\n";
+		$output .= $eol;
 
 		if (isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) {
-			$tmp_name = $_FILES['documento']['tmp_name']; // get the name of the file
-			$name = $_FILES['documento']['name']; // get the name of the file
-			$size = $_FILES['documento']['size']; // get size of the file for size validation
-			$type = $_FILES['documento']['type']; // get type of the file
-			$error = $_FILES['documento']['error']; // get the error (if any)
+			$tmp_name = $_FILES['documento']['tmp_name'];
+			$name = $_FILES['documento']['name'];
+			$size = $_FILES['documento']['size'];
+			$type = $_FILES['documento']['type'];
+			$error = $_FILES['documento']['error'];
 			
 			
-			$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
-			$content = fread($handle, $size); // reading the file
-			fclose($handle);                 // close upon completion
+			$handle = fopen($tmp_name, "rb");
+			$content = fread($handle, $size);
+			fclose($handle);
 			
 			$encoded_content = chunk_split(base64_encode($content));
 			
 			$output .= "--{$mime_boundary}\r\n";
 			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
 			$output .="Content-Description: ".$name."\r\n";
-			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"; size=".$size.";\r\n";
-			$output .="Content-Transfer-Encoding: base64\r\n" .$encoded_content. "\r\n";
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n";
+			$output .="Content-Transfer-Encoding: base64".$eol.$eol;
+			$output .= $encoded_content. "\r\n";
 		}
 
 		if (isset($_FILES['codfiscale']) && $_FILES['codfiscale']['error'] == 0) {
-			$tmp_name = $_FILES['codfiscale']['tmp_name']; // get the name of the file
-			$name = $_FILES['codfiscale']['name']; // get the name of the file
-			$size = $_FILES['codfiscale']['size']; // get size of the file for size validation
-			$type = $_FILES['codfiscale']['type']; // get type of the file
-			$error = $_FILES['codfiscale']['error']; // get the error (if any)
+			$tmp_name = $_FILES['codfiscale']['tmp_name'];
+			$name = $_FILES['codfiscale']['name'];
+			$size = $_FILES['codfiscale']['size'];
+			$type = $_FILES['codfiscale']['type'];
+			$error = $_FILES['codfiscale']['error'];
 			
 			
-			$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
-			$content = fread($handle, $size); // reading the file
-			fclose($handle);                 // close upon completion
+			$handle = fopen($tmp_name, "rb");
+			$content = fread($handle, $size);
+			fclose($handle);
 			
 			$encoded_content = chunk_split(base64_encode($content));
 			
 			$output .= "--{$mime_boundary}\r\n";
 			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
 			$output .="Content-Description: ".$name."\r\n";
-			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"; size=".$size.";\r\n" ;
-			$output .="Content-Transfer-Encoding: base64\r\n" .$encoded_content. "\r\n";
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Transfer-Encoding: base64".$eol.$eol ;
+			$output .= $encoded_content. "\r\n";
 		}
 
 		if (isset($_FILES['visuracam']) && $_FILES['visuracam']['error'] == 0) {
-			$tmp_name = $_FILES['visuracam']['tmp_name']; // get the name of the file
-			$name = $_FILES['visuracam']['name']; // get the name of the file
-			$size = $_FILES['visuracam']['size']; // get size of the file for size validation
-			$type = $_FILES['visuracam']['type']; // get type of the file
-			$error = $_FILES['visuracam']['error']; // get the error (if any)
+			$tmp_name = $_FILES['visuracam']['tmp_name'];
+			$name = $_FILES['visuracam']['name'];
+			$size = $_FILES['visuracam']['size'];
+			$type = $_FILES['visuracam']['type'];
+			$error = $_FILES['visuracam']['error'];
 			
-			$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
-			$content = fread($handle, $size); // reading the file
-			fclose($handle);                 // close upon completion
+			$handle = fopen($tmp_name, "rb");
+			$content = fread($handle, $size);
+			fclose($handle);
 			
 			$encoded_content = chunk_split(base64_encode($content));
 			
 			$output .= "--{$mime_boundary}\r\n";
 			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
 			$output .="Content-Description: ".$name."\r\n";
-			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"; size=".$size.";\r\n" ;
-			$output .="Content-Transfer-Encoding: base64\r\n" .$encoded_content. "\r\n";
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Transfer-Encoding: base64".$eol.$eol ;
+			$output .= $encoded_content. "\r\n";
 		}
+
+		$output .= "--{$mime_boundary}--\n";
 
 		$result = mail($to, $subject, $output, $headers);
 	} else {
 		$result = mail($to, $subject, $message, $headers);
 	}
 
-	$output .= "--{$mime_boundary}";
 
 	if ($result) {
 		echo $_FILES['documento']['size'] . "\n";
