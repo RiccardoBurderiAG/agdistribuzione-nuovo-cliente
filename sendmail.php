@@ -118,21 +118,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$mime_boundary = "=={$semi_rand}"; 
 	
 	//header section
-/* 	$headers = array( "MIME-Version: 1.0",
-		"From: info@agdistribuzione.com", 
-		"Reply-To: info@agdistribuzione.com",
-		//"Content-Type: multipart/mixed;",
-		//"boundary=\"{$mime_boundary}\""."\n",
-		//"X-Mailer: PHP/" . phpversion() . "\n",
-		//"cc: rita.alescio@adtradingsrl.eu, ". $email_agente,
-		//"Content-Type: text/html; charset=UTF-8",
-		//"Content-Transfer-Encoding: quoted-printable\n",
-    );	
-	$headers = implode("\n", $headers); */
-
 	$headers = "MIME-Version: 1.0\n";
 	$headers .= "From: info@agdistribuzione.com\n";
 	$headers .= "Reply-To: info@agdistribuzione.com\n";
+	// $headers .= "cc: rita.alescio@adtradingsrl.eu, ". $email_agente ."\n"
 
 	if(!empty(isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) ||
 		!empty(isset($_FILES['codfiscale']) && $_FILES['codfiscale']['error'] == 0) ||
@@ -144,12 +133,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 
 	//message section	
-	$message = $htmlBody;	
-	// check if file has correct exension
-	// $mimes = array('application/pdf', 'application/zip', 'application/vnd.rar', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'text/csv', 'text/tsv', 'image/jpg', 'image/jpeg', 'image/png','image/gif');
-	// if(array_key_exists('upfile', $_FILES['documento']['type'])) {
-	// 	echo "Mime type valid";
-	// }
+	$message = $htmlBody;
 
 	//upload document section
 	if(!empty(isset($_FILES))) {
@@ -159,7 +143,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$output .= $htmlBody;
 		$output .= "\n\n";
 
-		if (isset($_FILES['documento'])) {
+		if (isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) {
 			$tmp_name = $_FILES['documento']['tmp_name']; // get the name of the file
 			$name = $_FILES['documento']['name']; // get the name of the file
 			$size = $_FILES['documento']['size']; // get size of the file for size validation
@@ -176,11 +160,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			$output .= "--{$mime_boundary}\r\n";
 			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
 			$output .="Content-Description: ".$name."\r\n";
-			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"; size=".$size.";\r\n";
 			$output .="Content-Transfer-Encoding: base64\r\n" .$encoded_content. "\r\n";
 		}
 
-		if (isset($_FILES['codfiscale'])) {
+		if (isset($_FILES['codfiscale']) && $_FILES['codfiscale']['error'] == 0) {
 			$tmp_name = $_FILES['codfiscale']['tmp_name']; // get the name of the file
 			$name = $_FILES['codfiscale']['name']; // get the name of the file
 			$size = $_FILES['codfiscale']['size']; // get size of the file for size validation
@@ -197,11 +181,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			$output .= "--{$mime_boundary}\r\n";
 			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
 			$output .="Content-Description: ".$name."\r\n";
-			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"; size=".$size.";\r\n" ;
 			$output .="Content-Transfer-Encoding: base64\r\n" .$encoded_content. "\r\n";
 		}
 
-		if (isset($_FILES['visuracam'])) {
+		if (isset($_FILES['visuracam']) && $_FILES['visuracam']['error'] == 0) {
 			$tmp_name = $_FILES['visuracam']['tmp_name']; // get the name of the file
 			$name = $_FILES['visuracam']['name']; // get the name of the file
 			$size = $_FILES['visuracam']['size']; // get size of the file for size validation
@@ -217,20 +201,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			$output .= "--{$mime_boundary}\r\n";
 			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
 			$output .="Content-Description: ".$name."\r\n";
-			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"; size=".$size.";\r\n" ;
 			$output .="Content-Transfer-Encoding: base64\r\n" .$encoded_content. "\r\n";
 		}
 
-		return mail($to, $subject, $output, $headers);
+		$result = mail($to, $subject, $output, $headers);
 	} else {
-		return mail($to, $subject, $message, $headers);
+		$result = mail($to, $subject, $message, $headers);
 	}
 
 	$output .= "--{$mime_boundary}";
 
 	if ($result) {
-		echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
-		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
+		echo $_FILES['documento']['size'] . "\n";
+		echo $_FILES['codfiscale']['size']. "\n";
+		echo $_FILES['visuracam']['size']. "\n";
+		//echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
+		//echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
 	}else{
 		echo '<script type="text/javascript">alert("Sorry! Message was not sent, Try again Later.");</script>';
 		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
