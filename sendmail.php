@@ -5,7 +5,7 @@ $codice_agente = "";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$codice_agente = isset( $_POST['codice_agente']) ? $_POST['codice_agente'] : '';
-    $email_agente = isset( $_POST['emial_agente']) ? $_POST['emial_agente'] : '';
+    $email_agente = isset( $_POST['email_agente']) ? $_POST['email_agente'] : '';
 	$listino = isset( $_POST['listino']) ? $_POST['listino'] : '';
 	$condizioni_pagamento = isset( $_POST['condizioni_pagamento']) ? $_POST['condizioni_pagamento'] : '';
 	$agency_type = isset( $_POST['agency_type']) ? $_POST['agency_type'] : '';
@@ -37,9 +37,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$privacy_accept_2 = isset( $_POST['privacy_accept_2']) ? $_POST['privacy_accept_2'] : '';
 	$array_closing_day = implode(", ", $closing_day);
 
-	$to = "riccardo.burderi@gmail.com"; // ordinierregi@gmail.com
+	$to = "riccardo.burderi@aghoreca.com"; // ordinierregi@gmail.com
 	$from = "info@agdistribuzione.com";
-	$message = "<!DOCTYPE html>
+	$body = "<!DOCTYPE html>
 	<html>
 	<head>
 	<meta charset='utf-8'>
@@ -113,77 +113,69 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             </table>
         </body>
 	</html>";
-    
-    //concat the uploaded files to message
-    // $message .= $upload_documento_attachment;
-    // $message .= $upload_cod_fiscale_attachment;
-    // $message .= $upload_visura_cam_attachment;
 
 	$subject = "Inserimento nuovo cliente";
+
+	// Boundary  
+	$semi_rand = md5(time());  
+	$mime_boundary = "=={$semi_rand}"; 
 	
-	// Set content-type header to send HTML email 
-    $random_hash = md5(date('r', time())); 
-    $attachment = chunk_split(base64_encode(file_get_contents($_FILES['$upload_documento']['name']))); 
-
-    // TODO visit https://www.geeksforgeeks.org/php-send-attachment-email/
-	$headers = array( "MIME-Version: 1.0" ,
-        "Content-Type: multipart/mixed;\n",
-        " boundary=\"PHP-mixed-".$random_hash."\"",
-        "Content-Transfer-Encoding: 7bit\n\n",
-		"Content-type: text/html; charset=iso-8859-1",
-		"From: info@agdistribuzione.com",
+	//header section
+	$headers = array( "MIME-Version: 1.0",
+		"From: info@agdistribuzione.com", 
 		"Reply-To: info@agdistribuzione.com",
-		"X-Mailer: PHP/" . phpversion(),
-		//"cc: rita.alescio@adtradingsrl.eu"
-    );
-    // upload documents
-    // $upload_documento='';
-    // $upload_documento_attachment='';
-    // if ($_FILES['$upload_documento']['error'] != 4 && ($_FILES['$upload_documento']['size'] != 0 && $_FILES['$upload_documento']['error'] != 0)) {
-    //     $upload_documento = $_FILES['$upload_documento'];
-    //     $upload_documento_attachment=prepareAttachment($upload_documento["tmp_name"],$upload_documento["tmp_name"]["name"]);
-    // }
-    // $upload_cod_fiscale='';
-    // $upload_cod_fiscale_attachment='';
-    // if ($_FILES['$upload_cod_fiscale']['error'] != 4 && ($_FILES['$upload_cod_fiscale']['size'] != 0 && $_FILES['$upload_cod_fiscale']['error'] != 0)) {
-    //     $upload_cod_fiscale = $_FILES['$upload_cod_fiscale'];
-    //     $upload_cod_fiscale_attachment=prepareAttachment($upload_cod_fiscale["tmp_name"],$upload_cod_fiscale["tmp_name"]["name"])
-    // }
-    // $upload_visura_cam='';
-    // $upload_visura_cam_attachment='';
-    // if ($_FILES['$upload_visura_cam']['error'] != 4 && ($_FILES['$upload_visura_cam']['size'] != 0 && $_FILES['$upload_visura_cam']['error'] != 0)) {
-    //     $upload_visura_cam = $_FILES['$upload_visura_cam'];
-    //     $upload_visura_cam_attachment=prepareAttachment($upload_visura_cam["tmp_name"],$upload_visura_cam["tmp_name"]["name"])
-    // }
-	$headers = implode("\r\n", $headers);
-    //$result = 1;
+		//"Content-Type: multipart/form-data;",
+		//"X-Mailer: PHP/" . phpversion() . "\n",
+		//"cc: rita.alescio@adtradingsrl.eu, ". $email_agente,
+		"Content-Type: text/html; charset=UTF-8",
+		"Content-Transfer-Encoding: 7bit",
+		//"boundary=\"{$mime_boundary}\""."\n",
+    );	
+
+	$headers = implode("\n", $headers);
+	$message = $body;
+	//message section	
+	//$message = "--{$mime_boundary}\n" . "Content-Transfer-Encoding: 7bit\n\n" ."Content-Type: text/html; charset=\"UTF-8\"\n" . "MIME-Version: 1.0 \n\n". $body . "\n\n";
+
+	if (isset($_FILES['uploadDocumento']) && $_FILES['uploadDocumento']['error'] == 0) {
+		$tmp_name = '';
+		$name = '';
+		$size = '';
+		$type = '';
+		$error = '';
+		
+		$message .= "--{$mime_boundary}\n"; 
+		$tmp_name = $_FILES['uploadDocumento']['tmp_name']; // get the temporary file name of the file on the server
+		$name = $_FILES['uploadDocumento']['name']; // get the name of the file
+		$size = $_FILES['uploadDocumento']['size']; // get size of the file for size validation
+		$type = $_FILES['uploadDocumento']['type']; // get type of the file
+		$error = $_FILES['uploadDocumento']['error']; // get the error (if any)	
+		
+		$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
+		$content = fread($handle, $size); // reading the file
+		fclose($handle);                 // close upon completion
+		
+		$encoded_content = chunk_split(base64_encode($content));
+		
+		//encode files to message
+
+		$message .="Content-Type: $type; name=\"".$name."\"\n";
+		$message .="Content-Description: ".$name."\n";
+		$message .="Content-Disposition: multipart/form-data;\n" . "filename=\"".$name."\"; size=".$size.";\n" ;
+		$message .="Content-Transfer-Encoding: base64\n\n". $encoded_content . "\n\n";
+	}
+	//$message .= "--{$mime_boundary}--";
+
 	$result = mail($to, $subject, $message, $headers, $from);
+
 	if ($result) {
-		echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
-		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
-		//echo $message;
-		echo $upload_documento_attachment;
-
-
+		echo $headers;
+		echo $message;
+		print_r($_FILES); //print empty array
+		//echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
+		//echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
 	}else{
-		// $message = "Sorry! Message was not sent, Try again Later.";
 		echo '<script type="text/javascript">alert("Sorry! Message was not sent, Try again Later.");</script>';
 		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
 	}
 }
-
-function prepareAttachment( $filename, $fileorgname) {
-    $semi_rand = md5(time()); 
-    $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
-    $attachContent = '';
-    $file = fopen($filename,"rb");
-    $data = fread($file,filesize($filename));
-    fclose($file);
-    $cvData = chunk_split(base64_encode($data));
-    $attachContent .= "Content-Type: {\"application/octet-stream\"};\n" . " name=\"$fileorgname\"\n" . 
-    "Content-Disposition: attachment;\n" . " filename=\"$fileorgname\"\n" . 
-    "Content-Transfer-Encoding: base64\n\n" . $cvData . "\n\n";
-    $attachContent .= "--{$mime_boundary}\n"; 
-    return $attachContent;
-}
-?>

@@ -11,8 +11,11 @@ $(document).ready(function() {
             data: form.serialize(),
             method: 'POST',
             success: function(resp) {
-                //alert('Cliente inserito correttamente');
-            }
+                alert('Cliente inserito correttamente');
+            },
+            error: function(resp) { 
+                alert("Inserimento fallito, riprova"); 
+            }  
         })
     })
 })

@@ -16,7 +16,6 @@
         const uploadVisuraCam = document.getElementById("upload_visura_cam");
 
         function checkFileSizes(e) {
-            console.log(e.target.files);
             if (e.target.files[0].size > 12582912) {
                 alert("Dimensioni file troppo grandi");
                 e.target.value='';
@@ -321,8 +320,8 @@
                 </div>
                 <div class="inputGroupContainer inputFileGroupContainer">
                     <div class="inputContainer inputFile">
-                        <label for="upload_documento"><strong>Invia Documento d'identità </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
-                        <input type="file" onchange="return checkFileSizes(event)" id="upload_documento" name="upload_documento" accept=".pdf, .jpg, .png, .zip, .rar, .doc, .docx">
+                        <label for="uploadDocumento"><strong>Invia Documento d'identità </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
+                        <input type="file" onchange="return checkFileSizes(event)" id="uploadDocumento" name="uploadDocumento" accept=".pdf, .jpg, .png, .zip, .rar, .doc, .docx">
                     </div>
                     <div class="inputContainer inputFile">
                         <label for="upload_cod_fiscale"><strong>Invia Codice Fiscale </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
