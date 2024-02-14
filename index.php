@@ -320,18 +320,18 @@
                 </div>
                 <div class="inputGroupContainer inputFileGroupContainer">
                     <div class="inputContainer inputFile">
-                        <label for="uploadDocumento"><strong>Invia Documento d'identità </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
-                        <input type="file" onchange="return checkFileSizes(event)" id="uploadDocumento" name="uploadDocumento" accept=".pdf, .jpg, .png, .zip, .rar, .doc, .docx">
+                        <label for="documento"><strong>Invia Documento d'identità </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
+                        <input type="file" onchange="return checkFileSizes(event)" id="documento" name="documento">
                     </div>
                     <div class="inputContainer inputFile">
-                        <label for="upload_cod_fiscale"><strong>Invia Codice Fiscale </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
-                        <input type="file" onchange="return checkFileSizes(event)" id="upload_cod_fiscale" name="upload_cod_fiscale" accept=".pdf, .jpg, .png, .zip, .rar, .doc, .docx">
+                        <label for="codfiscale"><strong>Invia Codice Fiscale </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
+                        <input type="file" onchange="return checkFileSizes(event)" id="codfiscale" name="codfiscale">
                     </div>
                 </div>
                 <div class="inputGroupContainer">
                     <div class="inputContainer inputFile halfInput">
-                        <label for="upload_visura_cam"><strong>Invia Visura Camerale </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
-                        <input type="file" onchange="return checkFileSizes(event)" id="upload_visura_cam" name="upload_visura_cam" accept=".pdf, .jpg, .png, .zip, .rar, .doc, .docx">
+                        <label for="visuracam"><strong>Invia Visura Camerale </br>(Max 12Mb - PDF, JPG, PNG, ZIP, RAR, DOC, DOCX)</strong></label>
+                        <input type="file" onchange="return checkFileSizes(event)" id="visuracam" name="visuracam">
                     </div>
                 </div>
                 <!-- Fine Dati Responsabile -->

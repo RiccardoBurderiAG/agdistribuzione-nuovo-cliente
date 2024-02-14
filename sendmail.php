@@ -1,7 +1,5 @@
 <?php
-$message = ""; 
-$codiceagente_error = "";         
-$codice_agente = "";
+$message = "";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$codice_agente = isset( $_POST['codice_agente']) ? $_POST['codice_agente'] : '';
@@ -39,7 +37,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 	$to = "riccardo.burderi@aghoreca.com"; // ordinierregi@gmail.com
 	$from = "info@agdistribuzione.com";
-	$body = "<!DOCTYPE html>
+	$subject = "Inserimento nuovo cliente";
+	$htmlBody = "<!DOCTYPE html>
 	<html>
 	<head>
 	<meta charset='utf-8'>
@@ -114,8 +113,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         </body>
 	</html>";
 
-	$subject = "Inserimento nuovo cliente";
-
 	// Boundary  
 	$semi_rand = md5(time());  
 	$mime_boundary = "=={$semi_rand}"; 
@@ -124,32 +121,42 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$headers = array( "MIME-Version: 1.0",
 		"From: info@agdistribuzione.com", 
 		"Reply-To: info@agdistribuzione.com",
-		//"Content-Type: multipart/form-data;",
+		//"Content-Type: multipart/alternative;",
 		//"X-Mailer: PHP/" . phpversion() . "\n",
 		//"cc: rita.alescio@adtradingsrl.eu, ". $email_agente,
 		"Content-Type: text/html; charset=UTF-8",
-		"Content-Transfer-Encoding: 7bit\n",
+		"Content-Transfer-Encoding: quoted-printable\n",
 		//"boundary=\"{$mime_boundary}\""."\n",
     );	
 
 	$headers = implode("\n", $headers);
-	$message = $body;
+	
 	//message section	
+	$message = $htmlBody;	
+	// check if file has correct exension
+	// $mimes = array('application/pdf', 'application/zip', 'application/vnd.rar', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'text/csv', 'text/tsv', 'image/jpg', 'image/jpeg', 'image/png','image/gif');
+	// if(array_key_exists('upfile', $_FILES['documento']['type'])) {
+	// 	echo "Mime type valid";
+	// }
+
 	//$message = "--{$mime_boundary}\n" . "Content-Transfer-Encoding: 7bit\n\n" ."Content-Type: text/html; charset=\"UTF-8\"\n" . "MIME-Version: 1.0 \n\n". $body . "\n\n";
 
-	if (isset($_FILES['uploadDocumento']) && $_FILES['uploadDocumento']['error'] == 0) {
+
+
+	//upload document section
+	if (isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) {
 		$tmp_name = '';
 		$name = '';
 		$size = '';
 		$type = '';
 		$error = '';
-		
+
 		$message .= "--{$mime_boundary}\n"; 
-		$tmp_name = $_FILES['uploadDocumento']['tmp_name']; // get the temporary file name of the file on the server
-		$name = $_FILES['uploadDocumento']['name']; // get the name of the file
-		$size = $_FILES['uploadDocumento']['size']; // get size of the file for size validation
-		$type = $_FILES['uploadDocumento']['type']; // get type of the file
-		$error = $_FILES['uploadDocumento']['error']; // get the error (if any)	
+		$tmp_name = $_FILES['documento']['tmp_name']; // get the temporary file name of the file on the server
+		$name = $_FILES['documento']['name']; // get the name of the file
+		$size = $_FILES['documento']['size']; // get size of the file for size validation
+		$type = $_FILES['documento']['type']; // get type of the file
+		$error = $_FILES['documento']['error']; // get the error (if any)	
 		
 		$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
 		$content = fread($handle, $size); // reading the file
@@ -162,18 +169,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$message .="Content-Type: $type; name=\"".$name."\"\n";
 		$message .="Content-Description: ".$name."\n";
 		$message .="Content-Disposition: multipart/form-data;\n" . "filename=\"".$name."\"; size=".$size.";\n" ;
-		$message .="Content-Transfer-Encoding: base64\n\n". $encoded_content . "\n\n";
+		$message .="Content-Transfer-Encoding: base64\n\n". $encoded_content . "\n\n"; 
 	}
-	//$message .= "--{$mime_boundary}--";
 
 	$result = mail($to, $subject, $message, $headers, $from);
 
 	if ($result) {
-		echo $headers;
-		echo $message;
-		print_r($_FILES); //print empty array
-		//echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
-		//echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
+		print_r($_FILES);
+		// echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
+		// echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
 	}else{
 		echo '<script type="text/javascript">alert("Sorry! Message was not sent, Try again Later.");</script>';
 		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
