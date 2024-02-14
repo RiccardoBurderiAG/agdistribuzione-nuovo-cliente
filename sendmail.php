@@ -173,11 +173,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			
 			$encoded_content = chunk_split(base64_encode($content));
 			
-			$output .= "--{$mime_boundary}\n\n";
-			$output .="Content-Type: " .$type. "; name=\"".$name."\"\n";
-			$output .="Content-Description: ".$name."\n";
-			$output .="Content-Disposition: attachment;\n" . "filename=\"".$name."\"\n" ;
-			$output .="Content-Transfer-Encoding: base64\n\n".$encoded_content. "\n\n";
+			$output .= "--{$mime_boundary}\r\n";
+			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
+			$output .="Content-Description: ".$name."\r\n";
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Transfer-Encoding: base64\r\n" .$encoded_content. "\r\n";
 		}
 
 		if (isset($_FILES['codfiscale'])) {
@@ -194,11 +194,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			
 			$encoded_content = chunk_split(base64_encode($content));
 			
-			$output .= "--{$mime_boundary}\n\n";
-			$output .="Content-Type: " .$type. "; name=\"".$name."\"\n";
-			$output .="Content-Description: ".$name."\n";
-			$output .="Content-Disposition: attachment;\n" . "filename=\"".$name."\"\n" ;
-			$output .="Content-Transfer-Encoding: base64\n\n".$encoded_content. "\n\n";
+			$output .= "--{$mime_boundary}\r\n";
+			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
+			$output .="Content-Description: ".$name."\r\n";
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Transfer-Encoding: base64\r\n" .$encoded_content. "\r\n";
 		}
 
 		if (isset($_FILES['visuracam'])) {
@@ -208,18 +208,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			$type = $_FILES['visuracam']['type']; // get type of the file
 			$error = $_FILES['visuracam']['error']; // get the error (if any)
 			
-			
 			$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
 			$content = fread($handle, $size); // reading the file
 			fclose($handle);                 // close upon completion
 			
 			$encoded_content = chunk_split(base64_encode($content));
 			
-			$output .= "--{$mime_boundary}\n\n";
-			$output .="Content-Type: " .$type. "; name=\"".$name."\"\n";
-			$output .="Content-Description: ".$name."\n";
-			$output .="Content-Disposition: attachment;\n" . "filename=\"".$name."\"\n" ;
-			$output .="Content-Transfer-Encoding: base64\n\n".$encoded_content. "\n\n";
+			$output .= "--{$mime_boundary}\r\n";
+			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
+			$output .="Content-Description: ".$name."\r\n";
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Transfer-Encoding: base64\r\n" .$encoded_content. "\r\n";
 		}
 
 		return mail($to, $subject, $output, $headers);
