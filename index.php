@@ -377,7 +377,7 @@
                 <!-- Submit Section -->
                 <div class="submitContainer">
                     <input type="submit" name="formSend" id="Send" class="sendButton sendFormData" value="Invia">
-                    <input type="submit" name="formSend" id="Send" class="sendButton sendButton-black sendFormDataReset" onclick="resetForm()" value="Reset">
+                    <input type="submit" name="formReset" id="Reset" class="sendButton sendButton-black sendFormDataReset" onclick="resetForm()" value="Reset">
                 </div>
             </form>
         </div>
