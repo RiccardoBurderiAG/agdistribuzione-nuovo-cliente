@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inserimento Nuovo Cliente - AG Distribuzione, Leader HO.RE.CA. per la Sicilia sud-orientale</title>
     <link href="./resources/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="./resources/style.css">
+    <link href="./resources/style.css" rel="preload stylesheet" as="style" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap|Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap|Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="preload" as="style">
     <script>
         const uploadDocumento = document.getElementById("upload_documento");
         const uploadCodFiscale = document.getElementById("upload_cod_fiscale");
@@ -383,5 +382,6 @@
         </div>
     </div>
 </body>
-<script src="./resources/main.js"></script>
+<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script defer src="./resources/main.js"></script>
 </html>
