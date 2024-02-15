@@ -35,82 +35,83 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$privacy_accept_2 = isset( $_POST['privacy_accept_2']) ? $_POST['privacy_accept_2'] : '';
 	$array_closing_day = implode(", ", $closing_day);
 
-	$to = "riccardo.burderi@aghoreca.com"; // ordinierregi@gmail.com
+	$to = "ordinierregi@gmail.com";
 	$from = "info@agdistribuzione.com";
 	$subject = "Inserimento nuovo cliente";
 	$htmlBody = "<!DOCTYPE html>
 	<html>
-	<head>
-	<meta charset='utf-8'>
-	<style type='text/css'>
-        table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        }
-        
-        td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-        }
-        
-        tr:nth-child(even) {
-        background-color: #dddddd;
-        }
-	</style>
-	</head>
-    <body>
-		<table>
-			<tr><td><img src='https://www.agdistribuzione.it/images/template/agdistribuzione.jpg' width='200' /></td> <td><h3>Inserimento Nuovo Cliente</h3></td></tr>
+		<head>
+			<meta charset='utf-8'>
+			<style type='text/css'>
+				table {
+				font-family: arial, sans-serif;
+				border-collapse: collapse;
+				width: 100%;
+				}
 				
-				<tr><td colspan='2'><h3>Dettagli Agente, Listino e Condizioni di Pagamento</h3></td></tr>
-				<tr><td>Codice Agente</td> <td>$codice_agente</td></tr>
-				<tr><td>Listino</td> <td>$listino</td></tr>
-				<tr><td>Condizioni Pagamento</td> <td>$condizioni_pagamento</td></tr>
+				td, th {
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 8px;
+				}
 				
-				<tr><td colspan='2'><h3>Dettagli Cliente</h3></td></tr>
-				<tr><td>Tipologia Azienda</td> <td>$agency_type</td></tr>
-				<tr><td>Titolare</td> <td>$titolare</td></tr>
-				<tr><td>Denominazione Commerciale</td> <td>$denominazione</td></tr>
-				<tr><td>Tipo di Attivit&agrave;</td> <td>$attivita</td></tr>
-				<tr><td>Tel</td> <td>$tel</td></tr>
-				<tr><td>Email</td> <td>$email_cliente</td></tr>
-				<tr><td>PEC</td> <td>$pec</td></tr>
-				
-				<tr><td colspan='2'><h3>Indirizzo di Fatturazione</h3></td></tr>
-				<tr><td>Partita Iva</td> <td>$vat</td></tr>
-				<tr><td>Codice Univoco</td> <td>$unique_code</td></tr>
-				<tr><td>Indirizzo Fatturazione</td> <td>$address</td></tr>
-				<tr><td>Cap</td> <td>$cap</td></tr>
-				<tr><td>Citt&agrave;</td> <td>$city</td></tr>
-				<tr><td>Provincia</td> <td>$province</td></tr>
-				
-				
-				<tr><td colspan='2'><h3>Indirizzo di Consegna</h3></td></tr>
-				<tr><td>Indirizzo Destinazione Merci</td> <td>$merci_address</td></tr>
-				<tr><td>Cap</td> <td>$merci_cap</td></tr>
-				<tr><td>Citt&agrave;</td> <td>$merci_city</td></tr>
-				<tr><td>Provincia </td> <td>$merci_province</td></tr>
-				
-				<tr><td>Giorni di Chiusura</td> <td>$array_closing_day</td></tr>
-				<tr><td>Dettagli info giorni Chiusura</td> <td>$closing_day_details</td></tr>
-				
-				<tr><td colspan='2'><h3>Dati Bancari</h3></td></tr>
-				<tr><td>Banca di Appoggio</td> <td>$banca_appoggio</td></tr>
-				<tr><td>Agenzia</td> <td>$banca_agenzia</td></tr>
-				<tr><td>IBAN</td> <td>$iban</td></tr>
-				
-				<tr><td colspan='2'><h3>Dati Responsabile</h3></td></tr>
-				<tr><td>Responsabile</td> <td>$responsabile</td></tr>
-				
-				<tr><td>Note</td> <td>$message_note</td></tr>
+				tr:nth-child(even) {
+				background-color: #dddddd;
+				}
+			</style>
+		</head>
+		<body>
+			<table>
+			<tr><td><img src='https://www.agdistribuzione.it/images/template/agdistribuzione.jpg' width='200' /></td>
+			<td><h3>Inserimento Nuovo Cliente</h3></td></tr>
+			<tr><td colspan='2'><h3>Dettagli Agente, Listino e Condizioni di Pagamento</h3></td></tr>
+			<tr><td>Codice Agente</td> <td>$codice_agente</td></tr>
+			<tr><td>Listino</td> <td>$listino</td></tr>
+			<tr><td>Condizioni Pagamento</td> <td>$condizioni_pagamento</td></tr>
+			<tr><td>Email Agente</td> <td>$email_agente</td></tr>
 
-				<tr><td colspan='2'><h3>Presa visione sulla privacy</h3></td></tr>
-				<tr><td>relativamente al punto 1.A</td> <td>$privacy_accept_1</td></tr>
-				<tr><td>relativamente al punto 1.B</td> <td>$privacy_accept_2</td></tr>
-            </table>
-        </body>
+			<tr><td colspan='2'><h3>Dettagli Cliente</h3></td></tr>
+			<tr><td>Tipologia Azienda</td> <td>$agency_type</td></tr>
+			<tr><td>Titolare</td> <td>$titolare</td></tr>
+			<tr><td>Denominazione Commerciale</td> <td>$denominazione</td></tr>
+			<tr><td>Tipo di Attivit&agrave;</td> <td>$attivita</td></tr>
+			<tr><td>Tel</td> <td>$tel</td></tr>
+			<tr><td>Email</td> <td>$email_cliente</td></tr>
+			<tr><td>PEC</td> <td>$pec</td></tr>
+
+			<tr><td colspan='2'><h3>Indirizzo di Fatturazione</h3></td></tr>
+			<tr><td>Partita Iva</td> <td>$vat</td></tr>
+			<tr><td>Codice Univoco</td> <td>$unique_code</td></tr>
+			<tr><td>Indirizzo Fatturazione</td> <td>$address</td></tr>
+			<tr><td>Cap</td> <td>$cap</td></tr>
+			<tr><td>Citt&agrave;</td> <td>$city</td></tr>
+			<tr><td>Provincia</td> <td>$province</td></tr>
+
+
+			<tr><td colspan='2'><h3>Indirizzo di Consegna</h3></td></tr>
+			<tr><td>Indirizzo Destinazione Merci</td> <td>$merci_address</td></tr>
+			<tr><td>Cap</td> <td>$merci_cap</td></tr>
+			<tr><td>Citt&agrave;</td> <td>$merci_city</td></tr>
+			<tr><td>Provincia </td> <td>$merci_province</td></tr>
+
+			<tr><td>Giorni di Chiusura</td> <td>$array_closing_day</td></tr>
+			<tr><td>Dettagli info giorni Chiusura</td> <td>$closing_day_details</td></tr>
+
+			<tr><td colspan='2'><h3>Dati Bancari</h3></td></tr>
+			<tr><td>Banca di Appoggio</td> <td>$banca_appoggio</td></tr>
+			<tr><td>Agenzia</td> <td>$banca_agenzia</td></tr>
+			<tr><td>IBAN</td> <td>$iban</td></tr>
+
+			<tr><td colspan='2'><h3>Dati Responsabile</h3></td></tr>
+			<tr><td>Responsabile</td> <td>$responsabile</td></tr>
+
+			<tr><td>Note</td> <td>$message_note</td></tr>
+
+			<tr><td colspan='2'><h3>Presa visione sulla privacy</h3></td></tr>
+			<tr><td>relativamente al punto 1.A</td> <td>$privacy_accept_1</td></tr>
+			<tr><td>relativamente al punto 1.B</td> <td>$privacy_accept_2</td></tr>
+			</table>
+		</body>
 	</html>";
 
 	// Boundary  
@@ -118,66 +119,113 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$mime_boundary = "=={$semi_rand}"; 
 	
 	//header section
-	$headers = array( "MIME-Version: 1.0",
-		"From: info@agdistribuzione.com", 
-		"Reply-To: info@agdistribuzione.com",
-		//"Content-Type: multipart/alternative;",
-		//"X-Mailer: PHP/" . phpversion() . "\n",
-		//"cc: rita.alescio@adtradingsrl.eu, ". $email_agente,
-		"Content-Type: text/html; charset=UTF-8",
-		"Content-Transfer-Encoding: quoted-printable\n",
-		//"boundary=\"{$mime_boundary}\""."\n",
-    );	
+	$headers = "MIME-Version: 1.0\n";
+	$headers .= "From: info@agdistribuzione.com\n";
+	$headers .= "Reply-To: info@agdistribuzione.com\n";
+	$headers .= "cc: rita.alescio@adtradingsrl.eu, ". $email_agente ."\n";
 
-	$headers = implode("\n", $headers);
-	
+	if(!empty(isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) ||
+		!empty(isset($_FILES['codfiscale']) && $_FILES['codfiscale']['error'] == 0) ||
+		!empty(isset($_FILES['visuracam']) && $_FILES['visuracam']['error'] == 0)
+	) {
+        $headers .= "Content-type: multipart/mixed; boundary=\"".$mime_boundary."\"\n";
+    } else {
+        $headers .= "Content-type: text/html; charset=iso-8859-1\n";
+    }
+
 	//message section	
-	$message = $htmlBody;	
-	// check if file has correct exension
-	// $mimes = array('application/pdf', 'application/zip', 'application/vnd.rar', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'text/csv', 'text/tsv', 'image/jpg', 'image/jpeg', 'image/png','image/gif');
-	// if(array_key_exists('upfile', $_FILES['documento']['type'])) {
-	// 	echo "Mime type valid";
-	// }
-
-	//$message = "--{$mime_boundary}\n" . "Content-Transfer-Encoding: 7bit\n\n" ."Content-Type: text/html; charset=\"UTF-8\"\n" . "MIME-Version: 1.0 \n\n". $body . "\n\n";
-
-
+	$message = $htmlBody;
 
 	//upload document section
-	if (isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) {
-		$tmp_name = '';
-		$name = '';
-		$size = '';
-		$type = '';
-		$error = '';
+	if(!empty(isset($_FILES))) {
+		//$eol = "\r\n";
+		$eol = PHP_EOL;
 
-		$message .= "--{$mime_boundary}\n"; 
-		$tmp_name = $_FILES['documento']['tmp_name']; // get the temporary file name of the file on the server
-		$name = $_FILES['documento']['name']; // get the name of the file
-		$size = $_FILES['documento']['size']; // get size of the file for size validation
-		$type = $_FILES['documento']['type']; // get type of the file
-		$error = $_FILES['documento']['error']; // get the error (if any)	
-		
-		$handle = fopen($tmp_name, "r"); // set the file handle only for reading the file
-		$content = fread($handle, $size); // reading the file
-		fclose($handle);                 // close upon completion
-		
-		$encoded_content = chunk_split(base64_encode($content));
-		
-		//encode files to message
+		$output = "--{$mime_boundary}\r\n";
+		$output .= "Content-type: text/html; charset=iso-8859-1\n";
+		$output .= "Content-Transfer-Encoding: quoted-printable\n\n";
+		$output .= $htmlBody;
+		$output .= $eol;
 
-		$message .="Content-Type: $type; name=\"".$name."\"\n";
-		$message .="Content-Description: ".$name."\n";
-		$message .="Content-Disposition: multipart/form-data;\n" . "filename=\"".$name."\"; size=".$size.";\n" ;
-		$message .="Content-Transfer-Encoding: base64\n\n". $encoded_content . "\n\n"; 
+		if (isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) {
+			$tmp_name = $_FILES['documento']['tmp_name'];
+			$name = $_FILES['documento']['name'];
+			$size = $_FILES['documento']['size'];
+			$type = $_FILES['documento']['type'];
+			$error = $_FILES['documento']['error'];
+			
+			
+			$handle = fopen($tmp_name, "rb");
+			$content = fread($handle, $size);
+			fclose($handle);
+			
+			$encoded_content = chunk_split(base64_encode($content));
+			
+			$output .= "--{$mime_boundary}\r\n";
+			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
+			$output .="Content-Description: ".$name."\r\n";
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n";
+			$output .="Content-Transfer-Encoding: base64".$eol.$eol;
+			$output .= $encoded_content. "\r\n";
+		}
+
+		if (isset($_FILES['codfiscale']) && $_FILES['codfiscale']['error'] == 0) {
+			$tmp_name = $_FILES['codfiscale']['tmp_name'];
+			$name = $_FILES['codfiscale']['name'];
+			$size = $_FILES['codfiscale']['size'];
+			$type = $_FILES['codfiscale']['type'];
+			$error = $_FILES['codfiscale']['error'];
+			
+			
+			$handle = fopen($tmp_name, "rb");
+			$content = fread($handle, $size);
+			fclose($handle);
+			
+			$encoded_content = chunk_split(base64_encode($content));
+			
+			$output .= "--{$mime_boundary}\r\n";
+			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
+			$output .="Content-Description: ".$name."\r\n";
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Transfer-Encoding: base64".$eol.$eol ;
+			$output .= $encoded_content. "\r\n";
+		}
+
+		if (isset($_FILES['visuracam']) && $_FILES['visuracam']['error'] == 0) {
+			$tmp_name = $_FILES['visuracam']['tmp_name'];
+			$name = $_FILES['visuracam']['name'];
+			$size = $_FILES['visuracam']['size'];
+			$type = $_FILES['visuracam']['type'];
+			$error = $_FILES['visuracam']['error'];
+			
+			$handle = fopen($tmp_name, "rb");
+			$content = fread($handle, $size);
+			fclose($handle);
+			
+			$encoded_content = chunk_split(base64_encode($content));
+			
+			$output .= "--{$mime_boundary}\r\n";
+			$output .="Content-Type: " .$type. "; name=\"".$name."\"\r\n";
+			$output .="Content-Description: ".$name."\r\n";
+			$output .="Content-Disposition: attachment;" . "filename=\"".$name."\"\r\n" ;
+			$output .="Content-Transfer-Encoding: base64".$eol.$eol ;
+			$output .= $encoded_content. "\r\n";
+		}
+
+		$output .= "--{$mime_boundary}--\n";
+
+		$result = mail($to, $subject, $output, $headers);
+	} else {
+		$result = mail($to, $subject, $message, $headers);
 	}
 
-	$result = mail($to, $subject, $message, $headers, $from);
 
 	if ($result) {
-		print_r($_FILES);
-		// echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
-		// echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
+		echo $_FILES['documento']['size'] . "\n";
+		echo $_FILES['codfiscale']['size']. "\n";
+		echo $_FILES['visuracam']['size']. "\n";
+		//echo '<script type="text/javascript">alert("Your Message was sent Successfully!");</script>';
+		//echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
 	}else{
 		echo '<script type="text/javascript">alert("Sorry! Message was not sent, Try again Later.");</script>';
 		echo '<script type="text/javascript">window.location.href = window.location.href;</script>';
