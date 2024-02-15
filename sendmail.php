@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$privacy_accept_2 = isset( $_POST['privacy_accept_2']) ? $_POST['privacy_accept_2'] : '';
 	$array_closing_day = implode(", ", $closing_day);
 
-	$to = "riccardo.burderi@aghoreca.com"; // ordinierregi@gmail.com
+	$to = "ordinierregi@gmail.com";
 	$from = "info@agdistribuzione.com";
 	$subject = "Inserimento nuovo cliente";
 	$htmlBody = "<!DOCTYPE html>
@@ -122,7 +122,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$headers = "MIME-Version: 1.0\n";
 	$headers .= "From: info@agdistribuzione.com\n";
 	$headers .= "Reply-To: info@agdistribuzione.com\n";
-	// $headers .= "cc: rita.alescio@adtradingsrl.eu, ". $email_agente ."\n"
+	$headers .= "cc: rita.alescio@adtradingsrl.eu, ". $email_agente ."\n";
 
 	if(!empty(isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) ||
 		!empty(isset($_FILES['codfiscale']) && $_FILES['codfiscale']['error'] == 0) ||
