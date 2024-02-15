@@ -137,7 +137,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$message = $htmlBody;
 
 	//upload document section
-	if(!empty(isset($_FILES))) {
+	if(!empty(isset($_FILES['documento']) && $_FILES['documento']['error'] == 0) ||
+		!empty(isset($_FILES['codfiscale']) && $_FILES['codfiscale']['error'] == 0) ||
+		!empty(isset($_FILES['visuracam']) && $_FILES['visuracam']['error'] == 0)) {
 		//$eol = "\r\n";
 		$eol = PHP_EOL;
 
