@@ -2,18 +2,42 @@
     "theme_color": "#de0000",
     "background_color": "#ffffff",
     "icons": [
-        {
-            "purpose": "maskable",
-            "sizes": "512x512",
-            "src": "icon512_maskable.png",
-            "type": "image/png"
-        },
-        {
-            "purpose": "any",
-            "sizes": "512x512",
-            "src": "icon512_rounded.png",
-            "type": "image/png"
-        }
+      {
+          "purpose": "maskable",
+          "sizes": "512x512",
+          "src": "icon512_maskable.png",
+          "type": "image/png"
+      },
+      {
+          "purpose": "any",
+          "sizes": "512x512",
+          "src": "icon512_rounded.png",
+          "type": "image/png"
+      },
+      {
+        "purpose": "any",
+        "sizes": "72x72",
+        "src": "72.png",
+        "type": "image/png"
+      },
+      {
+        "purpose": "any",
+        "sizes": "152x152",
+        "src": "152.png",
+        "type": "image/png"
+      },
+      {
+        "purpose": "any",
+        "sizes": "192x192",
+        "src": "192.png",
+        "type": "image/png"
+      },
+      {
+        "purpose": "any",
+        "sizes": "512x512",
+        "src": "512.png",
+        "type": "image/png"
+      }
     ],
     "start_url": "./../index.php",
     "orientation": "any",
@@ -24,17 +48,17 @@
     "short_name": "Nuovo Cliente AG",
     "description": "Fomr inserimento nuovo cliente da parte di Agente",
     "screenshots": [
-        {
-          "src": "screenshot1.png",
-          "type": "image/png",
-          "sizes": "540x720",
-          "form_factor": "narrow"
-        },
-        {
-          "src": "screenshot2.png",
-          "type": "image/png",
-          "sizes": "720x540",
-          "form_factor": "wide"
-        }
-      ]
+      {
+        "src": "screenshot1.png",
+        "type": "image/png",
+        "sizes": "540x720",
+        "form_factor": "narrow"
+      },
+      {
+        "src": "screenshot2.png",
+        "type": "image/png",
+        "sizes": "720x540",
+        "form_factor": "wide"
+      }
+    ]
 }
