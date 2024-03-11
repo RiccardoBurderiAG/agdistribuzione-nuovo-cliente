@@ -158,7 +158,7 @@
                 <div class="inputGroupContainer">
                     <div class="inputContainer">
                         <label for="email_cliente">Email<div class="labelStrong">obbligatorio</div></label>
-                        <input type="email_cliente" id="email_cliente" name="email_cliente" placeholder="Indirizzo Email*" required>
+                        <input type="email" id="email_cliente" name="email_cliente" placeholder="Indirizzo Email*" required>
                     </div>
                     <div class="inputContainer">
                         <label for="pec">PEC</label>
