@@ -314,8 +314,8 @@
                 <div class="spacer"></div>
                 <div class="inputGroupContainer">
                     <div class="inputContainer">
-                        <label for="responsabile">Responsabilità Società<div class="labelStrong">obbligatorio</div></label>
-                        <input type="text" id="responsabile" name="responsabile" placeholder="Responsabilità Società" required>
+                        <label for="responsabile">Responsabile Società<div class="labelStrong">obbligatorio</div></label>
+                        <input type="text" id="responsabile" name="responsabile" placeholder="Responsabile Società" required>
                     </div>
                 </div>
                 <div class="inputGroupContainer inputFileGroupContainer">
