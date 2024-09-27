@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inserimento Nuovo Cliente - AG Distribuzione, Leader HO.RE.CA. per la Sicilia sud-orientale</title>
     <link href="./resources/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-    <link href="./resources/style.css" rel="preload stylesheet" as="style" type="text/css">
+    <link href="./resources/style.css" rel="stylesheet" as="style" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap|Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="preload" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap|Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" as="style">
+    <link rel="apple-touch-icon" href="./resources/152.png">
+    <meta name="theme-color" content="#de0000">
     <link rel="manifest" href="./resources/manifest.json" />
     <script>
         const uploadDocumento = document.getElementById("upload_documento");
@@ -156,7 +158,7 @@
                 <div class="inputGroupContainer">
                     <div class="inputContainer">
                         <label for="email_cliente">Email<div class="labelStrong">obbligatorio</div></label>
-                        <input type="email_cliente" id="email_cliente" name="email_cliente" placeholder="Indirizzo Email*" required>
+                        <input type="email" id="email_cliente" name="email_cliente" placeholder="Indirizzo Email*" required>
                     </div>
                     <div class="inputContainer">
                         <label for="pec">PEC</label>
@@ -377,7 +379,7 @@
                 <!-- Submit Section -->
                 <div class="submitContainer">
                     <input type="submit" name="formSend" id="Send" class="sendButton sendFormData" value="Invia">
-                    <input type="submit" name="formReset" id="Reset" class="sendButton sendButton-black sendFormDataReset" onclick="resetForm()" value="Reset">
+                    <input type="reset" name="formReset" id="Reset" class="sendButton sendButton-black sendFormDataReset" onclick="resetForm()" value="Reset">
                 </div>
             </form>
         </div>

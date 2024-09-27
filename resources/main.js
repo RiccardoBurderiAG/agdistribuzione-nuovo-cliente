@@ -1,5 +1,9 @@
 function resetForm() {
     document.getElementById("nuovoClienteForm").reset();
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
 }
 
 $(document).ready(function() {

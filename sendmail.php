@@ -36,9 +36,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$array_closing_day = implode(", ", $closing_day);
 
 	$to = "ordinierregi@gmail.com";
-	//TEST
-	//$to = "riccardo.burderiag@gmail.com";
-	$from = "info@agdistribuzione.com";
+	$from = "info@agdistribuzione.it";
 	$subject = "Inserimento nuovo cliente";
 	$htmlBody = "<!DOCTYPE html>
 	<html>
@@ -122,9 +120,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	
 	//header section
 	$headers = "MIME-Version: 1.0\n";
-	$headers .= "From: info@agdistribuzione.com\n";
-	$headers .= "Reply-To: info@agdistribuzione.com\n";
-	$headers .= "cc: rita.alescio@adtradingsrl.eu, ". $email_agente ."\n";
+	$headers .= "From: info@agdistribuzione.it\n";
+	$headers .= "Reply-To: info@agdistribuzione.it\n";
+	$headers .= $email_agente ."\n";
 	//TEST
 	//$headers .= "cc: riccardo.burderi@aghoreca.com\n";
 
