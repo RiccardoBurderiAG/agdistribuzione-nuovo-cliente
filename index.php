@@ -35,7 +35,6 @@
                 Compila il form sottostante per inserimento nuovo cliente.
             </p>
         </div>
-        <!-- TODO add message of success "Tutti i dati sono stati inviati correttamente. Grazie." -->
         <div class="formContainer">
             <?php include "sendmail.php"; ?>
             <!-- TODO change action to action="https://www.agdistribuzione.it/agenti/nuovo-cliente" -->
