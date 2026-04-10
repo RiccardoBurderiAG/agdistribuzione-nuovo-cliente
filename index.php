@@ -52,6 +52,7 @@
                             <option value="4A">4A</option>
                             <option value="5A">5A</option>
                             <option value="6A">6A</option>
+                            <option value="WEB">WEB</option>
                         </select>
                     </div>
                 </div>
