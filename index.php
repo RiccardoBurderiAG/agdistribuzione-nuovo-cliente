@@ -161,8 +161,8 @@
                         <input type="email" id="email_cliente" name="email_cliente" placeholder="Indirizzo Email*" required>
                     </div>
                     <div class="inputContainer">
-                        <label for="pec">PEC</label>
-                        <input type="text" id="pec" name="pec" placeholder="Indirizzo PEC*">
+                        <label for="pec">PEC<div class="labelStrong">obbligatorio</div></label>
+                        <input type="text" id="pec" name="pec" placeholder="Indirizzo PEC*" required>
                     </div>
                 </div>
                 <div class="inputContainer radioContainer">
